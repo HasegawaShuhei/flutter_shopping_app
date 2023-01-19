@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
-import '../routing/app_router.dart';
+import '../../../core/routing/app_router.dart';
 
 class BottomNavBar extends StatelessWidget {
   const BottomNavBar({super.key});

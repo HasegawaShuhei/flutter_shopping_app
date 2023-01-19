@@ -1,11 +1,11 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:auto_route/empty_router_widgets.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import '../../features/cart/shopping_cart/shopping_cart_screen.dart';
-import '../../features/product/detail/product_detail_screen.dart';
-import '../../features/product/list/product_list_screen.dart';
-import '../../features/user/profile/profile_page.dart';
-import '../widgets/bottom_nav_bar.dart';
+import '../../features/cart/ui/shopping_cart/shopping_cart_screen.dart';
+import '../../features/product/ui/detail/product_detail_screen.dart';
+import '../../features/product/ui/list/product_list_screen.dart';
+import '../../features/user/ui/profile/profile_page.dart';
+import '../../features/root/ui/root_screen.dart';
 import 'app_router.gr.dart';
 
 export 'app_router.gr.dart';

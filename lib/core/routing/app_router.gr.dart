@@ -15,11 +15,11 @@ import 'package:auto_route/auto_route.dart' as _i7;
 import 'package:auto_route/empty_router_widgets.dart' as _i2;
 import 'package:flutter/material.dart' as _i8;
 
-import '../../features/cart/shopping_cart/shopping_cart_screen.dart' as _i5;
-import '../../features/product/detail/product_detail_screen.dart' as _i4;
-import '../../features/product/list/product_list_screen.dart' as _i3;
-import '../../features/user/profile/profile_page.dart' as _i6;
-import '../widgets/bottom_nav_bar.dart' as _i1;
+import '../../features/cart/ui/shopping_cart/shopping_cart_screen.dart' as _i5;
+import '../../features/product/ui/detail/product_detail_screen.dart' as _i4;
+import '../../features/product/ui/list/product_list_screen.dart' as _i3;
+import '../../features/root/ui/root_screen.dart' as _i1;
+import '../../features/user/ui/profile/profile_page.dart' as _i6;
 
 class AppRouter extends _i7.RootStackRouter {
   AppRouter([_i8.GlobalKey<_i8.NavigatorState>? navigatorKey])
