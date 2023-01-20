@@ -4,7 +4,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../../features/cart/ui/shopping_cart/shopping_cart_screen.dart';
 import '../../features/product/ui/detail/product_detail_screen.dart';
 import '../../features/product/ui/list/product_list_screen.dart';
-import '../../features/user/ui/profile/profile_page.dart';
+import '../../features/user/ui/profile/profile_screen.dart';
 import '../../features/root/ui/root_screen.dart';
 import 'app_router.gr.dart';
 
@@ -23,8 +23,8 @@ final appRouterProvider = Provider((ref) => AppRouter());
       page: BottomNavBar,
       children: [
         AutoRoute<void>(
-          path: 'products',
-          name: 'ProductsRoute',
+          path: 'product',
+          name: 'ProductRouter',
           page: EmptyRouterPage,
           children: [
             AutoRoute<void>(
@@ -40,7 +40,7 @@ final appRouterProvider = Provider((ref) => AppRouter());
         ),
         AutoRoute<void>(
           path: 'cart',
-          name: 'CartRoute',
+          name: 'CartRouter',
           page: EmptyRouterPage,
           children: [
             AutoRoute<void>(
@@ -51,7 +51,7 @@ final appRouterProvider = Provider((ref) => AppRouter());
         ),
         AutoRoute<void>(
           path: 'profile',
-          name: 'ProfileRouter',
+          name: 'UserRouter',
           page: EmptyRouterPage,
           children: [
             AutoRoute<void>(

@@ -19,7 +19,7 @@ import '../../features/cart/ui/shopping_cart/shopping_cart_screen.dart' as _i5;
 import '../../features/product/ui/detail/product_detail_screen.dart' as _i4;
 import '../../features/product/ui/list/product_list_screen.dart' as _i3;
 import '../../features/root/ui/root_screen.dart' as _i1;
-import '../../features/user/ui/profile/profile_page.dart' as _i6;
+import '../../features/user/ui/profile/profile_screen.dart' as _i6;
 
 class AppRouter extends _i7.RootStackRouter {
   AppRouter([_i8.GlobalKey<_i8.NavigatorState>? navigatorKey])
@@ -33,19 +33,19 @@ class AppRouter extends _i7.RootStackRouter {
         child: const _i1.BottomNavBar(),
       );
     },
-    ProductsRoute.name: (routeData) {
+    ProductRouter.name: (routeData) {
       return _i7.MaterialPageX<void>(
         routeData: routeData,
         child: const _i2.EmptyRouterPage(),
       );
     },
-    CartRoute.name: (routeData) {
+    CartRouter.name: (routeData) {
       return _i7.MaterialPageX<void>(
         routeData: routeData,
         child: const _i2.EmptyRouterPage(),
       );
     },
-    ProfileRouter.name: (routeData) {
+    UserRouter.name: (routeData) {
       return _i7.MaterialPageX<void>(
         routeData: routeData,
         child: const _i2.EmptyRouterPage(),
@@ -84,44 +84,44 @@ class AppRouter extends _i7.RootStackRouter {
           path: '/',
           children: [
             _i7.RouteConfig(
-              ProductsRoute.name,
-              path: 'products',
+              ProductRouter.name,
+              path: 'product',
               parent: BottomNavRoute.name,
               children: [
                 _i7.RouteConfig(
                   ProductListRoute.name,
                   path: '',
-                  parent: ProductsRoute.name,
+                  parent: ProductRouter.name,
                 ),
                 _i7.RouteConfig(
                   ProductDetailRoute.name,
                   path: '',
-                  parent: ProductsRoute.name,
+                  parent: ProductRouter.name,
                   meta: <String, dynamic>{'hideBottomNav': true},
                 ),
               ],
             ),
             _i7.RouteConfig(
-              CartRoute.name,
+              CartRouter.name,
               path: 'cart',
               parent: BottomNavRoute.name,
               children: [
                 _i7.RouteConfig(
                   ShoppingCartRoute.name,
                   path: '',
-                  parent: CartRoute.name,
+                  parent: CartRouter.name,
                 )
               ],
             ),
             _i7.RouteConfig(
-              ProfileRouter.name,
+              UserRouter.name,
               path: 'profile',
               parent: BottomNavRoute.name,
               children: [
                 _i7.RouteConfig(
                   ProfileRoute.name,
                   path: '',
-                  parent: ProfileRouter.name,
+                  parent: UserRouter.name,
                 )
               ],
             ),
@@ -145,41 +145,41 @@ class BottomNavRoute extends _i7.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i2.EmptyRouterPage]
-class ProductsRoute extends _i7.PageRouteInfo<void> {
-  const ProductsRoute({List<_i7.PageRouteInfo>? children})
+class ProductRouter extends _i7.PageRouteInfo<void> {
+  const ProductRouter({List<_i7.PageRouteInfo>? children})
       : super(
-          ProductsRoute.name,
-          path: 'products',
+          ProductRouter.name,
+          path: 'product',
           initialChildren: children,
         );
 
-  static const String name = 'ProductsRoute';
+  static const String name = 'ProductRouter';
 }
 
 /// generated route for
 /// [_i2.EmptyRouterPage]
-class CartRoute extends _i7.PageRouteInfo<void> {
-  const CartRoute({List<_i7.PageRouteInfo>? children})
+class CartRouter extends _i7.PageRouteInfo<void> {
+  const CartRouter({List<_i7.PageRouteInfo>? children})
       : super(
-          CartRoute.name,
+          CartRouter.name,
           path: 'cart',
           initialChildren: children,
         );
 
-  static const String name = 'CartRoute';
+  static const String name = 'CartRouter';
 }
 
 /// generated route for
 /// [_i2.EmptyRouterPage]
-class ProfileRouter extends _i7.PageRouteInfo<void> {
-  const ProfileRouter({List<_i7.PageRouteInfo>? children})
+class UserRouter extends _i7.PageRouteInfo<void> {
+  const UserRouter({List<_i7.PageRouteInfo>? children})
       : super(
-          ProfileRouter.name,
+          UserRouter.name,
           path: 'profile',
           initialChildren: children,
         );
 
-  static const String name = 'ProfileRouter';
+  static const String name = 'UserRouter';
 }
 
 /// generated route for
