@@ -19,12 +19,12 @@ final appRouterProvider = Provider((ref) => AppRouter());
     AutoRoute<void>(
       initial: true,
       path: '/',
-      name: 'BottomNavRouter',
+      name: 'BottomNavRoute',
       page: BottomNavBar,
       children: [
         AutoRoute<void>(
           path: 'products',
-          name: 'ProductsRouter',
+          name: 'ProductsRoute',
           page: EmptyRouterPage,
           children: [
             AutoRoute<void>(
@@ -40,7 +40,7 @@ final appRouterProvider = Provider((ref) => AppRouter());
         ),
         AutoRoute<void>(
           path: 'cart',
-          name: 'CartRouter',
+          name: 'CartRoute',
           page: EmptyRouterPage,
           children: [
             AutoRoute<void>(

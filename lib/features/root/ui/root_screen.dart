@@ -13,9 +13,9 @@ class BottomNavBar extends StatelessWidget {
     // AnimatedOpacity(opacity: hideBottomNav ? 0 : 1, duration: const Duration(milliseconds: 100));
     return AutoTabsRouter(
       routes: const [
-        ProductsRouter(),
-        CartRouter(),
-        ProfileRouter(),
+        ProductsRoute(),
+        CartRoute(),
+        ProfileRoute(),
       ],
       builder: (context, child, _) {
         return Scaffold(
@@ -47,7 +47,7 @@ class BottomNavBar extends StatelessWidget {
     // タブを押したら、そのタブのルートに遷移したいとき
     if (index == 0) {
       context.router
-          .navigate(const BottomNavRouter(children: [ProductsRouter()]));
+          .navigate(const BottomNavRoute(children: [ProductsRoute()]));
     }
     context.tabsRouter.setActiveIndex(index);
   }
