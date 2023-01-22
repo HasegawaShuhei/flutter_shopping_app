@@ -11,129 +11,146 @@
 // ignore_for_file: type=lint
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:auto_route/auto_route.dart' as _i7;
-import 'package:auto_route/empty_router_widgets.dart' as _i2;
-import 'package:flutter/material.dart' as _i8;
+import 'package:auto_route/auto_route.dart' as _i8;
+import 'package:auto_route/empty_router_widgets.dart' as _i3;
+import 'package:flutter/material.dart' as _i9;
 
-import '../../features/cart/ui/shopping_cart/shopping_cart_screen.dart' as _i5;
-import '../../features/product/ui/detail/product_detail_screen.dart' as _i4;
-import '../../features/product/ui/list/product_list_screen.dart' as _i3;
+import '../../features/cart/ui/shopping_cart/shopping_cart_screen.dart' as _i6;
+import '../../features/product/ui/detail/product_detail_screen.dart' as _i5;
+import '../../features/product/ui/list/product_list_screen.dart' as _i4;
 import '../../features/root/ui/root_screen.dart' as _i1;
-import '../../features/user/ui/profile/profile_screen.dart' as _i6;
+import '../../features/user/ui/profile/profile_screen.dart' as _i7;
+import '../../features/user/ui/signup/signup_screen.dart' as _i2;
+import 'auth_guard.dart' as _i10;
 
-class AppRouter extends _i7.RootStackRouter {
-  AppRouter([_i8.GlobalKey<_i8.NavigatorState>? navigatorKey])
-      : super(navigatorKey);
+class AppRouter extends _i8.RootStackRouter {
+  AppRouter({
+    _i9.GlobalKey<_i9.NavigatorState>? navigatorKey,
+    required this.authGuard,
+  }) : super(navigatorKey);
+
+  final _i10.AuthGuard authGuard;
 
   @override
-  final Map<String, _i7.PageFactory> pagesMap = {
+  final Map<String, _i8.PageFactory> pagesMap = {
     BottomNavRoute.name: (routeData) {
-      return _i7.MaterialPageX<void>(
+      return _i8.MaterialPageX<void>(
         routeData: routeData,
         child: const _i1.BottomNavBar(),
       );
     },
-    ProductRouter.name: (routeData) {
-      return _i7.MaterialPageX<void>(
+    SignupRoute.name: (routeData) {
+      return _i8.MaterialPageX<void>(
         routeData: routeData,
-        child: const _i2.EmptyRouterPage(),
+        child: const _i2.SignupScreen(),
       );
     },
-    CartRouter.name: (routeData) {
-      return _i7.MaterialPageX<void>(
+    ProductRoute.name: (routeData) {
+      return _i8.MaterialPageX<void>(
         routeData: routeData,
-        child: const _i2.EmptyRouterPage(),
+        child: const _i3.EmptyRouterPage(),
       );
     },
-    UserRouter.name: (routeData) {
-      return _i7.MaterialPageX<void>(
+    CartRoute.name: (routeData) {
+      return _i8.MaterialPageX<void>(
         routeData: routeData,
-        child: const _i2.EmptyRouterPage(),
+        child: const _i3.EmptyRouterPage(),
+      );
+    },
+    UserRoute.name: (routeData) {
+      return _i8.MaterialPageX<void>(
+        routeData: routeData,
+        child: const _i3.EmptyRouterPage(),
       );
     },
     ProductListRoute.name: (routeData) {
-      return _i7.MaterialPageX<void>(
+      return _i8.MaterialPageX<void>(
         routeData: routeData,
-        child: const _i3.ProductListScreen(),
+        child: const _i4.ProductListScreen(),
       );
     },
     ProductDetailRoute.name: (routeData) {
-      return _i7.MaterialPageX<void>(
+      return _i8.MaterialPageX<void>(
         routeData: routeData,
-        child: const _i4.ProductDetailScreen(),
+        child: const _i5.ProductDetailScreen(),
       );
     },
     ShoppingCartRoute.name: (routeData) {
-      return _i7.MaterialPageX<void>(
+      return _i8.MaterialPageX<void>(
         routeData: routeData,
-        child: const _i5.ShoppingCartScreen(),
+        child: const _i6.ShoppingCartScreen(),
       );
     },
     ProfileRoute.name: (routeData) {
-      return _i7.MaterialPageX<void>(
+      return _i8.MaterialPageX<void>(
         routeData: routeData,
-        child: const _i6.ProfileScreen(),
+        child: const _i7.ProfileScreen(),
       );
     },
   };
 
   @override
-  List<_i7.RouteConfig> get routes => [
-        _i7.RouteConfig(
+  List<_i8.RouteConfig> get routes => [
+        _i8.RouteConfig(
           BottomNavRoute.name,
           path: '/',
+          guards: [authGuard],
           children: [
-            _i7.RouteConfig(
-              ProductRouter.name,
+            _i8.RouteConfig(
+              ProductRoute.name,
               path: 'product',
               parent: BottomNavRoute.name,
               children: [
-                _i7.RouteConfig(
+                _i8.RouteConfig(
                   ProductListRoute.name,
                   path: '',
-                  parent: ProductRouter.name,
+                  parent: ProductRoute.name,
                 ),
-                _i7.RouteConfig(
+                _i8.RouteConfig(
                   ProductDetailRoute.name,
                   path: '',
-                  parent: ProductRouter.name,
+                  parent: ProductRoute.name,
                   meta: <String, dynamic>{'hideBottomNav': true},
                 ),
               ],
             ),
-            _i7.RouteConfig(
-              CartRouter.name,
+            _i8.RouteConfig(
+              CartRoute.name,
               path: 'cart',
               parent: BottomNavRoute.name,
               children: [
-                _i7.RouteConfig(
+                _i8.RouteConfig(
                   ShoppingCartRoute.name,
                   path: '',
-                  parent: CartRouter.name,
+                  parent: CartRoute.name,
                 )
               ],
             ),
-            _i7.RouteConfig(
-              UserRouter.name,
+            _i8.RouteConfig(
+              UserRoute.name,
               path: 'profile',
               parent: BottomNavRoute.name,
               children: [
-                _i7.RouteConfig(
+                _i8.RouteConfig(
                   ProfileRoute.name,
                   path: '',
-                  parent: UserRouter.name,
+                  parent: UserRoute.name,
                 )
               ],
             ),
           ],
-        )
+        ),
+        _i8.RouteConfig(
+          SignupRoute.name,
+          path: '/signup',
+        ),
       ];
 }
 
 /// generated route for
 /// [_i1.BottomNavBar]
-class BottomNavRoute extends _i7.PageRouteInfo<void> {
-  const BottomNavRoute({List<_i7.PageRouteInfo>? children})
+class BottomNavRoute extends _i8.PageRouteInfo<void> {
+  const BottomNavRoute({List<_i8.PageRouteInfo>? children})
       : super(
           BottomNavRoute.name,
           path: '/',
@@ -144,47 +161,59 @@ class BottomNavRoute extends _i7.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i2.EmptyRouterPage]
-class ProductRouter extends _i7.PageRouteInfo<void> {
-  const ProductRouter({List<_i7.PageRouteInfo>? children})
+/// [_i2.SignupScreen]
+class SignupRoute extends _i8.PageRouteInfo<void> {
+  const SignupRoute()
       : super(
-          ProductRouter.name,
+          SignupRoute.name,
+          path: '/signup',
+        );
+
+  static const String name = 'SignupRoute';
+}
+
+/// generated route for
+/// [_i3.EmptyRouterPage]
+class ProductRoute extends _i8.PageRouteInfo<void> {
+  const ProductRoute({List<_i8.PageRouteInfo>? children})
+      : super(
+          ProductRoute.name,
           path: 'product',
           initialChildren: children,
         );
 
-  static const String name = 'ProductRouter';
+  static const String name = 'ProductRoute';
 }
 
 /// generated route for
-/// [_i2.EmptyRouterPage]
-class CartRouter extends _i7.PageRouteInfo<void> {
-  const CartRouter({List<_i7.PageRouteInfo>? children})
+/// [_i3.EmptyRouterPage]
+class CartRoute extends _i8.PageRouteInfo<void> {
+  const CartRoute({List<_i8.PageRouteInfo>? children})
       : super(
-          CartRouter.name,
+          CartRoute.name,
           path: 'cart',
           initialChildren: children,
         );
 
-  static const String name = 'CartRouter';
+  static const String name = 'CartRoute';
 }
 
 /// generated route for
-/// [_i2.EmptyRouterPage]
-class UserRouter extends _i7.PageRouteInfo<void> {
-  const UserRouter({List<_i7.PageRouteInfo>? children})
+/// [_i3.EmptyRouterPage]
+class UserRoute extends _i8.PageRouteInfo<void> {
+  const UserRoute({List<_i8.PageRouteInfo>? children})
       : super(
-          UserRouter.name,
+          UserRoute.name,
           path: 'profile',
           initialChildren: children,
         );
 
-  static const String name = 'UserRouter';
+  static const String name = 'UserRoute';
 }
 
 /// generated route for
-/// [_i3.ProductListScreen]
-class ProductListRoute extends _i7.PageRouteInfo<void> {
+/// [_i4.ProductListScreen]
+class ProductListRoute extends _i8.PageRouteInfo<void> {
   const ProductListRoute()
       : super(
           ProductListRoute.name,
@@ -195,8 +224,8 @@ class ProductListRoute extends _i7.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i4.ProductDetailScreen]
-class ProductDetailRoute extends _i7.PageRouteInfo<void> {
+/// [_i5.ProductDetailScreen]
+class ProductDetailRoute extends _i8.PageRouteInfo<void> {
   const ProductDetailRoute()
       : super(
           ProductDetailRoute.name,
@@ -207,8 +236,8 @@ class ProductDetailRoute extends _i7.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i5.ShoppingCartScreen]
-class ShoppingCartRoute extends _i7.PageRouteInfo<void> {
+/// [_i6.ShoppingCartScreen]
+class ShoppingCartRoute extends _i8.PageRouteInfo<void> {
   const ShoppingCartRoute()
       : super(
           ShoppingCartRoute.name,
@@ -219,8 +248,8 @@ class ShoppingCartRoute extends _i7.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i6.ProfileScreen]
-class ProfileRoute extends _i7.PageRouteInfo<void> {
+/// [_i7.ProfileScreen]
+class ProfileRoute extends _i8.PageRouteInfo<void> {
   const ProfileRoute()
       : super(
           ProfileRoute.name,
