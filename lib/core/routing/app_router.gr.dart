@@ -19,8 +19,8 @@ import '../../features/cart/ui/shopping_cart/shopping_cart_screen.dart' as _i6;
 import '../../features/product/ui/detail/product_detail_screen.dart' as _i5;
 import '../../features/product/ui/list/product_list_screen.dart' as _i4;
 import '../../features/root/ui/root_screen.dart' as _i1;
+import '../../features/user/ui/login/login_screen.dart' as _i2;
 import '../../features/user/ui/profile/profile_screen.dart' as _i7;
-import '../../features/user/ui/signup/signup_screen.dart' as _i2;
 import 'auth_guard.dart' as _i10;
 
 class AppRouter extends _i8.RootStackRouter {
@@ -39,10 +39,11 @@ class AppRouter extends _i8.RootStackRouter {
         child: const _i1.BottomNavBar(),
       );
     },
-    SignupRoute.name: (routeData) {
+    LoginRoute.name: (routeData) {
       return _i8.MaterialPageX<void>(
         routeData: routeData,
-        child: const _i2.SignupScreen(),
+        child: const _i2.LoginScreen(),
+        fullscreenDialog: true,
       );
     },
     ProductRoute.name: (routeData) {
@@ -141,8 +142,14 @@ class AppRouter extends _i8.RootStackRouter {
           ],
         ),
         _i8.RouteConfig(
-          SignupRoute.name,
-          path: '/signup',
+          LoginRoute.name,
+          path: '/login',
+        ),
+        _i8.RouteConfig(
+          '*#redirect',
+          path: '*',
+          redirectTo: '/',
+          fullMatch: true,
         ),
       ];
 }
@@ -161,15 +168,15 @@ class BottomNavRoute extends _i8.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i2.SignupScreen]
-class SignupRoute extends _i8.PageRouteInfo<void> {
-  const SignupRoute()
+/// [_i2.LoginScreen]
+class LoginRoute extends _i8.PageRouteInfo<void> {
+  const LoginRoute()
       : super(
-          SignupRoute.name,
-          path: '/signup',
+          LoginRoute.name,
+          path: '/login',
         );
 
-  static const String name = 'SignupRoute';
+  static const String name = 'LoginRoute';
 }
 
 /// generated route for

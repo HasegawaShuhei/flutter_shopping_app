@@ -1,5 +1,4 @@
 import 'package:dio/dio.dart';
-import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../exceptions/api_exception.dart';
@@ -24,11 +23,12 @@ class HttpClient implements AbstractHttpClient {
     Map<String, dynamic>? queryParameters,
   }) async {
     try {
-      final response = await _dio.get<Map<String, dynamic>>(
+      final response = await _dio.get<dynamic>(
         path,
         queryParameters: queryParameters,
       );
-      return toResponseJson(response.data);
+      _validateResponse(response);
+      return _toResponseJson(response.data);
     } on DioError catch (e) {
       if (e.isNoConnectionError) {
         throw NetworkNotConnectedException(message: e.message);
@@ -46,8 +46,25 @@ class HttpClient implements AbstractHttpClient {
     required String path,
     Map<String, dynamic>? queryParameters,
     Map<String, dynamic>? data,
-  }) {
-    throw UnimplementedError();
+  }) async {
+    try {
+      final response = await _dio.post<dynamic>(
+        path,
+        queryParameters: queryParameters,
+        data: data,
+      );
+      _validateResponse(response);
+      return _toResponseJson(response.data);
+    } on DioError catch (e) {
+      if (e.isNoConnectionError) {
+        throw NetworkNotConnectedException(message: e.message);
+      } else if (e.isConnectionTimeout) {
+        throw ApiTimeoutException(message: e.message);
+      }
+      throw ApiException(message: e.message);
+    } on Exception catch (e) {
+      throw ApiException(message: e.toString());
+    }
   }
 
   @override
@@ -77,8 +94,16 @@ class HttpClient implements AbstractHttpClient {
     throw UnimplementedError();
   }
 
-  @visibleForTesting
-  Map<String, dynamic> toResponseJson(dynamic data) {
+  void _validateResponse(Response<dynamic> response) {
+    final statusCode = response.statusCode!;
+    final data = response.data as Map<String, dynamic>;
+    final message = data['message'] as String?;
+    if (statusCode >= 400) {
+      throw ApiException(message: message);
+    }
+  }
+
+  Map<String, dynamic> _toResponseJson(dynamic data) {
     if (data == null) {
       return <String, dynamic>{};
     }

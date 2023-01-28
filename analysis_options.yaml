@@ -3,6 +3,7 @@ include: package:pedantic_mono/analysis_options.yaml
 
 linter:
   rules:
+    always_put_control_body_on_new_line: false
     avoid_classes_with_only_static_members: false
     constant_identifier_names: true
     prefer_relative_imports: true

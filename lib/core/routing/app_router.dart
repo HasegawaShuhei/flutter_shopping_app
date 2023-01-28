@@ -6,15 +6,15 @@ import '../../features/cart/ui/shopping_cart/shopping_cart_screen.dart';
 import '../../features/product/ui/detail/product_detail_screen.dart';
 import '../../features/product/ui/list/product_list_screen.dart';
 import '../../features/root/ui/root_screen.dart';
+import '../../features/user/ui/login/login_screen.dart';
 import '../../features/user/ui/profile/profile_screen.dart';
-import '../../features/user/ui/signup/signup_screen.dart';
 import 'app_router.gr.dart';
 import 'auth_guard.dart';
 
 export 'app_router.gr.dart';
 
 final appRouterProvider = Provider((ref) {
-  final authGuard = ref.watch(authGuardProvider);
+  final authGuard = ref.read(authGuardProvider);
   return AppRouter(authGuard: authGuard);
 });
 
@@ -70,10 +70,12 @@ final appRouterProvider = Provider((ref) {
       ],
     ),
     AutoRoute<void>(
-      path: '/signup',
-      name: 'SignupRoute',
-      page: SignupScreen,
+      path: '/login',
+      name: 'LoginRoute',
+      page: LoginScreen,
+      fullscreenDialog: true,
     ),
+    RedirectRoute(path: '*', redirectTo: '/'),
   ],
 )
 class $AppRouter {}

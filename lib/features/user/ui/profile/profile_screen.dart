@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../providers/user_provider.dart';
+import '../../providers/user_service.dart';
 
 class ProfileScreen extends HookConsumerWidget {
   const ProfileScreen({super.key});
@@ -14,11 +14,10 @@ class ProfileScreen extends HookConsumerWidget {
       ),
       body: Center(
         child: ElevatedButton(
-          onPressed: () async {
-            final user = await ref.watch(userProvider.future);
-            print(user);
+          onPressed: () {
+            ref.read(userServiceProvider).logout();
           },
-          child: const Text('Profile'),
+          child: const Text('logout'),
         ),
       ),
     );
