@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import 'core/providers/error.dart';
-import 'core/routing/app_router.dart';
-import 'core/routing/router_observer.dart';
-import 'core/utils/scaffold_messenger.dart';
+import '../core/providers/error.dart';
+import '../core/routing/app_router.dart';
+import '../core/routing/router_observer.dart';
+import '../core/utils/scaffold_messenger.dart';
 
 class ShoppingApp extends HookConsumerWidget {
   const ShoppingApp({super.key});

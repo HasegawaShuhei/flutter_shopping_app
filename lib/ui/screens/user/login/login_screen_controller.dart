@@ -3,7 +3,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:vibration/vibration.dart';
 
 import '../../../../core/utils/scaffold_messenger.dart';
-import '../../providers/login_notifier.dart';
+import '../../../../features/user/providers/login_notifier.dart';
 
 final loginScreenController = Provider.autoDispose(LoginScreenController.new);
 
@@ -19,9 +19,6 @@ class LoginScreenController {
   late final TextEditingController nameController;
   late final TextEditingController passwordController;
   late final TextEditingController confirmPasswordController;
-
-  IconData passwordSuffixIcon({required bool isObscure}) =>
-      isObscure ? Icons.visibility_off : Icons.visibility;
 
   Future<void> login() async {
     final isValidated = _validateFields();

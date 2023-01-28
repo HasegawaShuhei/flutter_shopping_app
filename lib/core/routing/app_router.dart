@@ -2,12 +2,12 @@ import 'package:auto_route/auto_route.dart';
 import 'package:auto_route/empty_router_widgets.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../features/cart/ui/shopping_cart/shopping_cart_screen.dart';
-import '../../features/product/ui/detail/product_detail_screen.dart';
-import '../../features/product/ui/list/product_list_screen.dart';
-import '../../features/root/ui/root_screen.dart';
-import '../../features/user/ui/login/login_screen.dart';
-import '../../features/user/ui/profile/profile_screen.dart';
+import '../../ui/screens/cart/shopping_cart/shopping_cart_screen.dart';
+import '../../ui/screens/product/detail/product_detail_screen.dart';
+import '../../ui/screens/product/list/product_list_screen.dart';
+import '../../ui/screens/root/root_screen.dart';
+import '../../ui/screens/user/login/login_screen.dart';
+import '../../ui/screens/user/profile/profile_screen.dart';
 import 'app_router.gr.dart';
 import 'auth_guard.dart';
 

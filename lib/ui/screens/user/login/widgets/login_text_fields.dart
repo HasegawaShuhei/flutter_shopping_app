@@ -3,6 +3,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:gap/gap.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '../../common/auth_text_field.dart';
 import '../login_screen_controller.dart';
 import 'login_form_title.dart';
 
@@ -35,7 +36,7 @@ class _NameTextFields extends HookConsumerWidget {
 
     return Column(
       children: [
-        _LoginTextField(
+        AuthTextField(
           controller: nameController,
           hintText: 'name',
           icon: Icons.person_outline,
@@ -58,7 +59,7 @@ class _PasswordTextFields extends HookConsumerWidget {
     void onTap() => isObscure.value = !isObscure.value;
     return Column(
       children: [
-        _LoginTextField(
+        AuthTextField(
           controller: passwordController,
           hintText: 'password',
           icon: Icons.key_outlined,
@@ -67,7 +68,7 @@ class _PasswordTextFields extends HookConsumerWidget {
           onTap: onTap,
         ),
         const Gap(24),
-        _LoginTextField(
+        AuthTextField(
           controller: confirmPasswordController,
           hintText: 'password(confirm)',
           icon: Icons.key_outlined,
@@ -76,59 +77,6 @@ class _PasswordTextFields extends HookConsumerWidget {
           onTap: onTap,
         ),
       ],
-    );
-  }
-}
-
-// TODO(me): user共通のUIディレクトリに移動
-class _LoginTextField extends HookConsumerWidget {
-  const _LoginTextField({
-    required this.controller,
-    required this.hintText,
-    required this.icon,
-    this.isPassword = false,
-    this.isObscure = false,
-    this.onTap,
-  });
-
-  final TextEditingController controller;
-  final String hintText;
-  final IconData icon;
-  final bool isPassword;
-  final bool isObscure;
-  final void Function()? onTap;
-
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final passwordSuffixIcon = ref
-        .watch(loginScreenController)
-        .passwordSuffixIcon(isObscure: isObscure);
-    return TextField(
-      controller: controller,
-      textInputAction: TextInputAction.next,
-      obscureText: isObscure,
-      decoration: InputDecoration(
-        hintText: hintText,
-        contentPadding: const EdgeInsets.all(10),
-        border: const OutlineInputBorder(),
-        focusedBorder: const OutlineInputBorder(
-          borderSide: BorderSide(color: Colors.white),
-        ),
-        floatingLabelStyle: const TextStyle(color: Colors.white),
-        prefixIcon: Icon(
-          icon,
-          color: Colors.white,
-        ),
-        suffixIcon: isPassword
-            ? GestureDetector(
-                onTap: onTap,
-                child: Icon(
-                  passwordSuffixIcon,
-                  color: Colors.white,
-                ),
-              )
-            : null,
-      ),
     );
   }
 }

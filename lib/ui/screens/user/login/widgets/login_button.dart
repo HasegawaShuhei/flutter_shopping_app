@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../../providers/login_notifier.dart';
+import '../../../../../features/user/providers/login_notifier.dart';
 import '../login_screen_controller.dart';
 
 class LoginButton extends HookConsumerWidget {

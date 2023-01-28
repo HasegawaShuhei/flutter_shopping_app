@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../providers/user_service.dart';
+import '../../../../features/user/providers/user_service.dart';
 
 class ProfileScreen extends HookConsumerWidget {
   const ProfileScreen({super.key});
