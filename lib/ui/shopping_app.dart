@@ -31,6 +31,12 @@ class ShoppingApp extends HookConsumerWidget {
       title: 'Flutter Shopping App',
       theme: ThemeData(
         brightness: Brightness.dark,
+        primaryColor: Colors.greenAccent,
+        primarySwatch: Colors.green,
+        appBarTheme: AppBarTheme(backgroundColor: Colors.grey[850]),
+        bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+          selectedItemColor: Colors.greenAccent,
+        ),
       ),
     );
   }
