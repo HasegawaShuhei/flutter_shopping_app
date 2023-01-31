@@ -1,9 +1,7 @@
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../core/http/http_client.dart';
-import '../../../core/utils/types.dart';
 import '../models/paginated_products.dart';
-import '../models/product.dart';
 
 final productRepositoryProvider = Provider<ProductRepository>((ref) {
   final client = ref.read(httpClientProvider);
