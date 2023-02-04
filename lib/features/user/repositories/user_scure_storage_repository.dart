@@ -13,8 +13,8 @@ final userSecureStorageRepositoryProvider =
 class UserSecureStorageRepository {
   FlutterSecureStorage get storage => const FlutterSecureStorage();
 
-  static const String tokenKey = 'token';
-  static const String userIdKey = 'userId';
+  static const String tokenKey = 'tokenKey';
+  static const String userIdKey = 'userIdKey';
 
   Future<UserCredentials> getUserCredentials() async {
     final token = await _getToken();
