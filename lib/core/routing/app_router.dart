@@ -5,6 +5,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../../ui/screens/cart/shopping_cart/shopping_cart_screen.dart';
 import '../../ui/screens/product/detail/product_detail_screen.dart';
 import '../../ui/screens/product/list/product_list_screen.dart';
+import '../../ui/screens/product/search/product_search_screen.dart';
 import '../../ui/screens/root/root_screen.dart';
 import '../../ui/screens/user/login/login_screen.dart';
 import '../../ui/screens/user/profile/profile_screen.dart';
@@ -37,6 +38,11 @@ final appRouterProvider = Provider((ref) {
             AutoRoute<void>(
               path: '',
               page: ProductListScreen,
+            ),
+            AutoRoute<void>(
+              path: '',
+              page: ProductSearchScreen,
+              fullscreenDialog: true,
             ),
             AutoRoute<void>(
               path: '',
