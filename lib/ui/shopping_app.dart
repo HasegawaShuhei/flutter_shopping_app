@@ -4,7 +4,9 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../core/providers/error.dart';
 import '../core/routing/app_router.dart';
 import '../core/routing/router_observer.dart';
+import '../core/styles/app_theme_data.dart';
 import '../core/utils/scaffold_messenger.dart';
+import '../features/config/providers/theme_selector_provider.dart';
 
 class ShoppingApp extends HookConsumerWidget {
   const ShoppingApp({super.key});
@@ -29,15 +31,10 @@ class ShoppingApp extends HookConsumerWidget {
       ),
       routeInformationParser: appRouter.defaultRouteParser(),
       title: 'Flutter Shopping App',
-      theme: ThemeData(
-        brightness: Brightness.dark,
-        primaryColor: Colors.greenAccent,
-        primarySwatch: Colors.green,
-        appBarTheme: AppBarTheme(backgroundColor: Colors.grey[850]),
-        bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-          selectedItemColor: Colors.greenAccent,
-        ),
-      ),
+      debugShowCheckedModeBanner: false,
+      theme: AppThemeData.light(),
+      darkTheme: AppThemeData.dark(),
+      themeMode: ref.watch(themeSelectorNotifierProvider),
     );
   }
 }
