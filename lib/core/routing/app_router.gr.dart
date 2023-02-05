@@ -72,10 +72,13 @@ class AppRouter extends _i9.RootStackRouter {
       );
     },
     ProductSearchRoute.name: (routeData) {
-      return _i9.MaterialPageX<void>(
+      return _i9.CustomPage<void>(
         routeData: routeData,
         child: const _i5.ProductSearchScreen(),
-        fullscreenDialog: true,
+        transitionsBuilder: _i9.TransitionsBuilders.fadeIn,
+        durationInMilliseconds: 200,
+        opaque: true,
+        barrierDismissible: false,
       );
     },
     ProductDetailRoute.name: (routeData) {
@@ -112,6 +115,11 @@ class AppRouter extends _i9.RootStackRouter {
               children: [
                 _i9.RouteConfig(
                   ProductListRoute.name,
+                  path: '',
+                  parent: ProductRoute.name,
+                ),
+                _i9.RouteConfig(
+                  ProductSearchRoute.name,
                   path: '',
                   parent: ProductRoute.name,
                 ),

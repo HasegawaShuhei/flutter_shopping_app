@@ -44,6 +44,12 @@ final appRouterProvider = Provider((ref) {
               page: ProductSearchScreen,
               fullscreenDialog: true,
             ),
+            CustomRoute<void>(
+              path: '',
+              page: ProductSearchScreen,
+              transitionsBuilder: TransitionsBuilders.fadeIn,
+              durationInMilliseconds: 200,
+            ),
             AutoRoute<void>(
               path: '',
               page: ProductDetailScreen,
