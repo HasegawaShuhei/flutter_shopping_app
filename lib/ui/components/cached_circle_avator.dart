@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '../../core/styles/app_colors.dart';
 import 'app_circular_progress_indicator.dart';
 
 final cachedCircleAvatarCacheManagerProvider = Provider<BaseCacheManager?>(
@@ -39,7 +40,7 @@ class CachedCircleAvatar extends HookConsumerWidget {
         return CircleAvatar(
           key: circleAvatarKey,
           radius: size / 2,
-          backgroundColor: Colors.transparent,
+          backgroundColor: AppColors.transparent,
           backgroundImage: imageProvider,
         );
       },

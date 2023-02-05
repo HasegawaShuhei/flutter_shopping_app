@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 
+import '../../core/styles/app_colors.dart';
 import 'app_circular_progress_indicator.dart';
 
 class OverlayLoading extends StatelessWidget {
   const OverlayLoading({
     super.key,
-    this.backgroundColor = Colors.black26,
+    this.backgroundColor = AppColors.transparentBlack,
     this.showLoadingWidget = true,
   });
 

@@ -36,14 +36,14 @@ class AuthTextField extends StatelessWidget {
         ),
         prefixIcon: Icon(
           icon,
-          color: AppColors.white,
+          color: Theme.of(context).iconTheme.color,
         ),
         suffixIcon: isPassword
             ? GestureDetector(
                 onTap: onTap,
                 child: Icon(
                   isObscure ? Icons.visibility_off : Icons.visibility,
-                  color: AppColors.white,
+                  color: Theme.of(context).iconTheme.color,
                 ),
               )
             : null,

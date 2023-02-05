@@ -3,6 +3,7 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:gap/gap.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '../../../../../core/styles/app_colors.dart';
 import '../../../../../features/product/providers/current_product.dart';
 import '../../../../components/cached_circle_avator.dart';
 
@@ -59,7 +60,7 @@ class _RatingBar extends StatelessWidget {
           itemSize: 16,
           itemBuilder: (context, _) => const Icon(
             Icons.star,
-            color: Colors.amber,
+            color: AppColors.amber,
           ),
           onRatingUpdate: (_) {},
         ),

@@ -10,15 +10,13 @@ class ProductListAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverAppBar(
-      flexibleSpace: Padding(
-        padding: const EdgeInsets.fromLTRB(24, 8, 24, 4),
-        child: GestureDetector(
-          behavior: HitTestBehavior.deferToChild,
-          onTap: () {
-            context.router.push(const ProductSearchRoute());
-          },
-          child: const ProductSearchField(enabled: false),
-        ),
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+      title: GestureDetector(
+        behavior: HitTestBehavior.deferToChild,
+        onTap: () {
+          context.router.push(const ProductSearchRoute());
+        },
+        child: const ProductSearchField(enabled: false),
       ),
     );
   }
