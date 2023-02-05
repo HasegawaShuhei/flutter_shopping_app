@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
 
-// TODO(me): wearを参考にする フワッと
+import 'components/product_search_app_bar.dart';
+import 'components/product_search_body.dart';
 
 class ProductSearchScreen extends StatelessWidget {
   const ProductSearchScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(),
-      body: const Center(
-        child: Text('data'),
-      ),
+    return const Scaffold(
+      appBar: ProductSearchAppBar(),
+      body: ProductSearchBody(),
     );
   }
 }
