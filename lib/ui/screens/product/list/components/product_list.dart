@@ -4,8 +4,8 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../../../../../core/providers/error.dart';
 import '../../../../../features/product/providers/current_product.dart';
 import '../../../../../features/product/providers/paginated_products_notifier.dart';
-import '../../../../common/app_circular_progress_indicator.dart';
-import '../../../../common/async_value_wrapper.dart';
+import '../../../../components/app_circular_progress_indicator.dart';
+import '../../../../components/async_value_wrapper.dart';
 import 'product_list_item.dart';
 
 /// ローディング中はインジケーターを表示、

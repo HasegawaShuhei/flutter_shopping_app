@@ -4,7 +4,7 @@ import 'package:gap/gap.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../../../features/product/providers/current_product.dart';
-import '../../../../common/cached_circle_avator.dart';
+import '../../../../components/cached_circle_avator.dart';
 
 class ProductListItem extends HookConsumerWidget {
   const ProductListItem({super.key});

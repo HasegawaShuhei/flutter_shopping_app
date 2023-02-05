@@ -3,7 +3,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../../../core/styles/app_text.dart';
 import '../../../../../features/user/providers/login_notifier.dart';
-import '../../../../common/app_circular_progress_indicator.dart';
+import '../../../../components/app_circular_progress_indicator.dart';
 import '../login_screen_controller.dart';
 
 class LoginButton extends HookConsumerWidget {

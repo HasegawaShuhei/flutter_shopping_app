@@ -3,7 +3,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:gap/gap.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../common/auth_text_field.dart';
+import '../../components/auth_text_field.dart';
 import '../login_screen_controller.dart';
 import 'login_form_title.dart';
 

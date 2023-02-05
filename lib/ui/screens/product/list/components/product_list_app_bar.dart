@@ -2,7 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../core/routing/app_router.dart';
-import '../../common/product_search_field.dart';
+import '../../components/product_search_field.dart';
 
 class ProductListAppBar extends StatelessWidget {
   const ProductListAppBar({super.key});

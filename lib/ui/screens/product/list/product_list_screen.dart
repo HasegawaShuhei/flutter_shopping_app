@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import 'widgets/product_list_screen_body.dart';
+import 'components/product_list_screen_body.dart';
 
 class ProductListScreen extends HookConsumerWidget {
   const ProductListScreen({super.key});

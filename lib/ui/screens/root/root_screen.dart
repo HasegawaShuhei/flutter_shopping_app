@@ -6,7 +6,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../core/providers/overlay_loading.dart';
 import '../../../core/routing/app_router.dart';
-import '../../common/overlay_loading.dart';
+import '../../components/overlay_loading.dart';
 
 class BottomNavBar extends HookConsumerWidget {
   const BottomNavBar({super.key});
