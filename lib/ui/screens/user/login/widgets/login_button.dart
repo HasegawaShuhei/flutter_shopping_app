@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '../../../../../core/styles/app_text.dart';
 import '../../../../../features/user/providers/login_notifier.dart';
+import '../../../../common/app_circular_progress_indicator.dart';
 import '../login_screen_controller.dart';
 
 class LoginButton extends HookConsumerWidget {
@@ -15,10 +17,6 @@ class LoginButton extends HookConsumerWidget {
       height: 48,
       padding: const EdgeInsets.symmetric(horizontal: 48),
       child: ElevatedButton(
-        // TODO(me): Use theme
-        style: ElevatedButton.styleFrom(
-          backgroundColor: Colors.greenAccent,
-        ),
         onPressed: !loginState.isLoading
             ? () async {
                 await ref.read(loginScreenController).login();
@@ -27,15 +25,9 @@ class LoginButton extends HookConsumerWidget {
         child: !loginState.isLoading
             ? const Text(
                 'Login',
-                // TODO(me): Use theme
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                ),
+                style: AppTextStytles.s16Wbold,
               )
-            : const CircularProgressIndicator(
-                color: Colors.greenAccent,
-              ),
+            : const AppCircularProgressIndicator(),
       ),
     );
   }

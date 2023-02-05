@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import 'app_circular_progress_indicator.dart';
+
 final cachedCircleAvatarCacheManagerProvider = Provider<BaseCacheManager?>(
   (ref) => null,
 );
@@ -41,7 +43,7 @@ class CachedCircleAvatar extends HookConsumerWidget {
           backgroundImage: imageProvider,
         );
       },
-      placeholder: (context, url) => const CircularProgressIndicator(),
+      placeholder: (context, url) => const AppCircularProgressIndicator(),
       errorWidget: (_, __, dynamic error) {
         return Icon(
           Icons.error,

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:gap/gap.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../product_list_screen_controller.dart';
 import 'product_list.dart';
+import 'product_list_app_bar.dart';
 
 class ProductListScreenBody extends HookConsumerWidget {
   const ProductListScreenBody({super.key});
@@ -15,18 +15,9 @@ class ProductListScreenBody extends HookConsumerWidget {
     return SafeArea(
       child: CustomScrollView(
         controller: scrollController,
-        slivers: [
-          SliverAppBar(
-            toolbarHeight: 20,
-            actions: [
-              InkWell(
-                onTap: () {},
-                child: const Icon(Icons.search),
-              ),
-              const Gap(8),
-            ],
-          ),
-          const ProductList(),
+        slivers: const [
+          ProductListAppBar(),
+          ProductList(),
         ],
       ),
     );

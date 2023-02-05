@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'app_circular_progress_indicator.dart';
+
 class OverlayLoading extends StatelessWidget {
   const OverlayLoading({
     super.key,
@@ -16,7 +18,7 @@ class OverlayLoading extends StatelessWidget {
       color: backgroundColor,
       child: SizedBox.expand(
         child: showLoadingWidget
-            ? const Center(child: CircularProgressIndicator())
+            ? const Center(child: AppCircularProgressIndicator())
             : null,
       ),
     );

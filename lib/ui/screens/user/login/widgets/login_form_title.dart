@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 
+import '../../../../../core/styles/app_text.dart';
+
 class LoginFormTitle extends StatelessWidget {
   const LoginFormTitle({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Text(
+    return const Text(
       'Login',
-      // TODO(me): Use theme
-      style: Theme.of(context).textTheme.headline5,
+      style: AppTextStytles.s24Wbold,
     );
   }
 }

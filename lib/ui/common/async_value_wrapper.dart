@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import 'app_circular_progress_indicator.dart';
 import 'error_message.dart';
 
 class AsyncValueWrapper<T> extends StatelessWidget {
@@ -16,7 +17,7 @@ class AsyncValueWrapper<T> extends StatelessWidget {
         child: ErrorMessage(message: e.toString()),
       ),
       loading: () => const Center(
-        child: CircularProgressIndicator(),
+        child: AppCircularProgressIndicator(),
       ),
     );
   }
@@ -52,7 +53,7 @@ class SliverLoadingIndicator extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return const SliverFillRemaining(
       child: Center(
-        child: CircularProgressIndicator(),
+        child: AppCircularProgressIndicator(),
       ),
     );
   }
