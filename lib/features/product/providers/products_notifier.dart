@@ -3,27 +3,26 @@ import 'dart:async';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../repositories/product_repositories.dart';
-import 'paginated_products_state.dart';
+import 'products_state.dart';
 
-final paginatedProductsNotifierProvider = AsyncNotifierProvider.autoDispose<
-    PaginatedProductsNotifier, PaginatedProductsState>(
-  PaginatedProductsNotifier.new,
-  name: 'paginatedProductsNotifierProvider',
+final productsNotifierProvider =
+    AsyncNotifierProvider.autoDispose<ProductsNotifier, ProductsState>(
+  ProductsNotifier.new,
+  name: 'productsNotifierProvider',
 );
 
-class PaginatedProductsNotifier
-    extends AutoDisposeAsyncNotifier<PaginatedProductsState> {
+class ProductsNotifier extends AutoDisposeAsyncNotifier<ProductsState> {
   ProductRepository get _repository => ref.read(productRepositoryProvider);
 
   @override
-  Future<PaginatedProductsState> build() async {
+  Future<ProductsState> build() async {
     return _init();
   }
 
-  Future<PaginatedProductsState> _init() async {
-    final paginatedProducts = await _repository.fetchPaginatedProducts();
+  Future<ProductsState> _init() async {
+    final paginatedProducts = await _repository.fetchProducts();
 
-    final state = PaginatedProductsState(
+    final state = ProductsState(
       paginatedProducts: paginatedProducts,
       hasNext: paginatedProducts.hasNext,
       isFetching: false,
@@ -54,16 +53,16 @@ class PaginatedProductsNotifier
       final paginatedProducts = value.paginatedProducts!;
 
       /// 新しく取得したpaginatedProducts
-      final nextPaginatedProducts = await _repository.fetchPaginatedProducts(
+      final nextPaginatedProducts = await _repository.fetchProducts(
         limit: paginatedProducts.nextLimit,
         offset: paginatedProducts.nextOffset,
       );
 
       /// 現在保持しているproductsに新しく取得したものを追加
       final mergedPaginatedProducts = paginatedProducts.copyWith(
-        products: [
-          ...paginatedProducts.products,
-          ...nextPaginatedProducts.products,
+        results: [
+          ...paginatedProducts.results,
+          ...nextPaginatedProducts.results,
         ],
       );
 
@@ -77,10 +76,15 @@ class PaginatedProductsNotifier
       );
     } on Exception catch (e, st) {
       /// メモ: asyncErrorは初回以外でもwhenのerror画面が表示される
-      state = AsyncError<PaginatedProductsState>(e, st);
+      state = AsyncError<ProductsState>(e, st);
 
       /// isFetchingをfalseにしておく
       state = AsyncData(state.value!.copyWith(isFetching: false));
     }
   }
 }
+
+// TODO ページネーションの共通化 
+// ① 基底のstate作成
+// ② それを持つ基底のnotifierクラス作成
+// ③ それを継承するnotifierクラスの作成

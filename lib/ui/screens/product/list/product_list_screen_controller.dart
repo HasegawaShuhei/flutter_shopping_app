@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../../core/constants/number.dart';
-import '../../../../features/product/providers/paginated_products_notifier.dart';
+import '../../../../features/product/providers/products_notifier.dart';
 
 final productListScreenControllerProvider =
     Provider<ProductListScreenController>(ProductListScreenController.new);
@@ -12,8 +12,7 @@ class ProductListScreenController {
     _initializeScrollController();
   }
   final Ref _ref;
-  PaginatedProductsNotifier get _notifer =>
-      _ref.read(paginatedProductsNotifierProvider.notifier);
+  ProductsNotifier get _notifer => _ref.read(productsNotifierProvider.notifier);
 
   late final ScrollController scrollController;
 

@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'paginated_products.dart';
+part of 'paginated_response.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,41 +14,32 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-PaginatedProducts _$PaginatedProductsFromJson(Map<String, dynamic> json) {
-  return _PaginatedProducts.fromJson(json);
-}
-
 /// @nodoc
-mixin _$PaginatedProducts {
-  List<Product> get products => throw _privateConstructorUsedError;
+mixin _$PaginatedResponse<T> {
+  List<T> get results => throw _privateConstructorUsedError;
   int get total => throw _privateConstructorUsedError;
   int get limit => throw _privateConstructorUsedError;
-  @JsonKey(name: 'skip')
   int get offset => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $PaginatedProductsCopyWith<PaginatedProducts> get copyWith =>
+  $PaginatedResponseCopyWith<T, PaginatedResponse<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $PaginatedProductsCopyWith<$Res> {
-  factory $PaginatedProductsCopyWith(
-          PaginatedProducts value, $Res Function(PaginatedProducts) then) =
-      _$PaginatedProductsCopyWithImpl<$Res, PaginatedProducts>;
+abstract class $PaginatedResponseCopyWith<T, $Res> {
+  factory $PaginatedResponseCopyWith(PaginatedResponse<T> value,
+          $Res Function(PaginatedResponse<T>) then) =
+      _$PaginatedResponseCopyWithImpl<T, $Res, PaginatedResponse<T>>;
   @useResult
-  $Res call(
-      {List<Product> products,
-      int total,
-      int limit,
-      @JsonKey(name: 'skip') int offset});
+  $Res call({List<T> results, int total, int limit, int offset});
 }
 
 /// @nodoc
-class _$PaginatedProductsCopyWithImpl<$Res, $Val extends PaginatedProducts>
-    implements $PaginatedProductsCopyWith<$Res> {
-  _$PaginatedProductsCopyWithImpl(this._value, this._then);
+class _$PaginatedResponseCopyWithImpl<T, $Res,
+        $Val extends PaginatedResponse<T>>
+    implements $PaginatedResponseCopyWith<T, $Res> {
+  _$PaginatedResponseCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -58,16 +49,16 @@ class _$PaginatedProductsCopyWithImpl<$Res, $Val extends PaginatedProducts>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? products = null,
+    Object? results = null,
     Object? total = null,
     Object? limit = null,
     Object? offset = null,
   }) {
     return _then(_value.copyWith(
-      products: null == products
-          ? _value.products
-          : products // ignore: cast_nullable_to_non_nullable
-              as List<Product>,
+      results: null == results
+          ? _value.results
+          : results // ignore: cast_nullable_to_non_nullable
+              as List<T>,
       total: null == total
           ? _value.total
           : total // ignore: cast_nullable_to_non_nullable
@@ -85,41 +76,37 @@ class _$PaginatedProductsCopyWithImpl<$Res, $Val extends PaginatedProducts>
 }
 
 /// @nodoc
-abstract class _$$_PaginatedProductsCopyWith<$Res>
-    implements $PaginatedProductsCopyWith<$Res> {
-  factory _$$_PaginatedProductsCopyWith(_$_PaginatedProducts value,
-          $Res Function(_$_PaginatedProducts) then) =
-      __$$_PaginatedProductsCopyWithImpl<$Res>;
+abstract class _$$_PaginatedResponseCopyWith<T, $Res>
+    implements $PaginatedResponseCopyWith<T, $Res> {
+  factory _$$_PaginatedResponseCopyWith(_$_PaginatedResponse<T> value,
+          $Res Function(_$_PaginatedResponse<T>) then) =
+      __$$_PaginatedResponseCopyWithImpl<T, $Res>;
   @override
   @useResult
-  $Res call(
-      {List<Product> products,
-      int total,
-      int limit,
-      @JsonKey(name: 'skip') int offset});
+  $Res call({List<T> results, int total, int limit, int offset});
 }
 
 /// @nodoc
-class __$$_PaginatedProductsCopyWithImpl<$Res>
-    extends _$PaginatedProductsCopyWithImpl<$Res, _$_PaginatedProducts>
-    implements _$$_PaginatedProductsCopyWith<$Res> {
-  __$$_PaginatedProductsCopyWithImpl(
-      _$_PaginatedProducts _value, $Res Function(_$_PaginatedProducts) _then)
+class __$$_PaginatedResponseCopyWithImpl<T, $Res>
+    extends _$PaginatedResponseCopyWithImpl<T, $Res, _$_PaginatedResponse<T>>
+    implements _$$_PaginatedResponseCopyWith<T, $Res> {
+  __$$_PaginatedResponseCopyWithImpl(_$_PaginatedResponse<T> _value,
+      $Res Function(_$_PaginatedResponse<T>) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? products = null,
+    Object? results = null,
     Object? total = null,
     Object? limit = null,
     Object? offset = null,
   }) {
-    return _then(_$_PaginatedProducts(
-      products: null == products
-          ? _value._products
-          : products // ignore: cast_nullable_to_non_nullable
-              as List<Product>,
+    return _then(_$_PaginatedResponse<T>(
+      results: null == results
+          ? _value._results
+          : results // ignore: cast_nullable_to_non_nullable
+              as List<T>,
       total: null == total
           ? _value.total
           : total // ignore: cast_nullable_to_non_nullable
@@ -137,26 +124,23 @@ class __$$_PaginatedProductsCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
-class _$_PaginatedProducts extends _PaginatedProducts {
-  const _$_PaginatedProducts(
-      {final List<Product> products = const <Product>[],
+
+class _$_PaginatedResponse<T> extends _PaginatedResponse<T> {
+  const _$_PaginatedResponse(
+      {final List<T> results = const [],
       this.total = 0,
       this.limit = 0,
-      @JsonKey(name: 'skip') this.offset = 0})
-      : _products = products,
+      this.offset = 0})
+      : _results = results,
         super._();
 
-  factory _$_PaginatedProducts.fromJson(Map<String, dynamic> json) =>
-      _$$_PaginatedProductsFromJson(json);
-
-  final List<Product> _products;
+  final List<T> _results;
   @override
   @JsonKey()
-  List<Product> get products {
-    if (_products is EqualUnmodifiableListView) return _products;
+  List<T> get results {
+    if (_results is EqualUnmodifiableListView) return _results;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_products);
+    return EqualUnmodifiableListView(_results);
   }
 
   @override
@@ -166,67 +150,55 @@ class _$_PaginatedProducts extends _PaginatedProducts {
   @JsonKey()
   final int limit;
   @override
-  @JsonKey(name: 'skip')
+  @JsonKey()
   final int offset;
 
   @override
   String toString() {
-    return 'PaginatedProducts(products: $products, total: $total, limit: $limit, offset: $offset)';
+    return 'PaginatedResponse<$T>(results: $results, total: $total, limit: $limit, offset: $offset)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_PaginatedProducts &&
-            const DeepCollectionEquality().equals(other._products, _products) &&
+            other is _$_PaginatedResponse<T> &&
+            const DeepCollectionEquality().equals(other._results, _results) &&
             (identical(other.total, total) || other.total == total) &&
             (identical(other.limit, limit) || other.limit == limit) &&
             (identical(other.offset, offset) || other.offset == offset));
   }
 
-  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType,
-      const DeepCollectionEquality().hash(_products), total, limit, offset);
+      const DeepCollectionEquality().hash(_results), total, limit, offset);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_PaginatedProductsCopyWith<_$_PaginatedProducts> get copyWith =>
-      __$$_PaginatedProductsCopyWithImpl<_$_PaginatedProducts>(
+  _$$_PaginatedResponseCopyWith<T, _$_PaginatedResponse<T>> get copyWith =>
+      __$$_PaginatedResponseCopyWithImpl<T, _$_PaginatedResponse<T>>(
           this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$_PaginatedProductsToJson(
-      this,
-    );
-  }
 }
 
-abstract class _PaginatedProducts extends PaginatedProducts {
-  const factory _PaginatedProducts(
-      {final List<Product> products,
+abstract class _PaginatedResponse<T> extends PaginatedResponse<T> {
+  const factory _PaginatedResponse(
+      {final List<T> results,
       final int total,
       final int limit,
-      @JsonKey(name: 'skip') final int offset}) = _$_PaginatedProducts;
-  const _PaginatedProducts._() : super._();
-
-  factory _PaginatedProducts.fromJson(Map<String, dynamic> json) =
-      _$_PaginatedProducts.fromJson;
+      final int offset}) = _$_PaginatedResponse<T>;
+  const _PaginatedResponse._() : super._();
 
   @override
-  List<Product> get products;
+  List<T> get results;
   @override
   int get total;
   @override
   int get limit;
   @override
-  @JsonKey(name: 'skip')
   int get offset;
   @override
   @JsonKey(ignore: true)
-  _$$_PaginatedProductsCopyWith<_$_PaginatedProducts> get copyWith =>
+  _$$_PaginatedResponseCopyWith<T, _$_PaginatedResponse<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }

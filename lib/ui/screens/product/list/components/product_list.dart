@@ -3,7 +3,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../../../core/providers/error.dart';
 import '../../../../../features/product/providers/current_product.dart';
-import '../../../../../features/product/providers/paginated_products_notifier.dart';
+import '../../../../../features/product/providers/products_notifier.dart';
 import '../../../../components/app_circular_progress_indicator.dart';
 import '../../../../components/async_value_wrapper.dart';
 import 'product_list_item.dart';
@@ -16,14 +16,14 @@ class ProductList extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     /// AsyncErrorになった際にダイアログを表示する
-    ref.listen(paginatedProductsNotifierProvider, (_, state) {
+    ref.listen(productsNotifierProvider, (_, state) {
       if (state is AsyncError) {
         ref
             .read(errorProvider.notifier)
             .update((_) => state.error as Exception?);
       }
     });
-    final asyncProducts = ref.watch(paginatedProductsNotifierProvider);
+    final asyncProducts = ref.watch(productsNotifierProvider);
 
     /// AsyncLoading中、またはvalueがないとき(初回fetchがエラーのときなど？)はインジケーターを表示する
     if (asyncProducts is AsyncLoading || !asyncProducts.hasValue) {
