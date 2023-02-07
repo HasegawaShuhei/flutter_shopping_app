@@ -13,9 +13,7 @@ class ProductListAppBar extends StatelessWidget {
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       title: GestureDetector(
         behavior: HitTestBehavior.deferToChild,
-        onTap: () {
-          context.router.push(const ProductSearchRoute());
-        },
+        onTap: () => context.router.push(const ProductSearchRoute()),
         child: const ProductSearchField(enabled: false),
       ),
     );
