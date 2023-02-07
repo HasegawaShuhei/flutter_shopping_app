@@ -30,7 +30,7 @@ class ProductList extends HookConsumerWidget {
       return const SliverLoadingIndicator();
     }
 
-    final products = asyncProducts.value!.products;
+    final products = asyncProducts.value!.results;
     final isFetching = asyncProducts.value!.isFetching;
     return SliverPadding(
       padding: const EdgeInsets.all(4),

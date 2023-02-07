@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'products_state.dart';
+part of 'pagination_state.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,35 +15,35 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$ProductsState {
-  PaginatedResponse<Product>? get paginatedProducts =>
+mixin _$PaginationState<T> {
+  PaginationResponse<T>? get paginationResponse =>
       throw _privateConstructorUsedError;
   bool get hasNext => throw _privateConstructorUsedError;
   bool get isFetching => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $ProductsStateCopyWith<ProductsState> get copyWith =>
+  $PaginationStateCopyWith<T, PaginationState<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ProductsStateCopyWith<$Res> {
-  factory $ProductsStateCopyWith(
-          ProductsState value, $Res Function(ProductsState) then) =
-      _$ProductsStateCopyWithImpl<$Res, ProductsState>;
+abstract class $PaginationStateCopyWith<T, $Res> {
+  factory $PaginationStateCopyWith(
+          PaginationState<T> value, $Res Function(PaginationState<T>) then) =
+      _$PaginationStateCopyWithImpl<T, $Res, PaginationState<T>>;
   @useResult
   $Res call(
-      {PaginatedResponse<Product>? paginatedProducts,
+      {PaginationResponse<T>? paginationResponse,
       bool hasNext,
       bool isFetching});
 
-  $PaginatedResponseCopyWith<Product, $Res>? get paginatedProducts;
+  $PaginationResponseCopyWith<T, $Res>? get paginationResponse;
 }
 
 /// @nodoc
-class _$ProductsStateCopyWithImpl<$Res, $Val extends ProductsState>
-    implements $ProductsStateCopyWith<$Res> {
-  _$ProductsStateCopyWithImpl(this._value, this._then);
+class _$PaginationStateCopyWithImpl<T, $Res, $Val extends PaginationState<T>>
+    implements $PaginationStateCopyWith<T, $Res> {
+  _$PaginationStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -53,15 +53,15 @@ class _$ProductsStateCopyWithImpl<$Res, $Val extends ProductsState>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? paginatedProducts = freezed,
+    Object? paginationResponse = freezed,
     Object? hasNext = null,
     Object? isFetching = null,
   }) {
     return _then(_value.copyWith(
-      paginatedProducts: freezed == paginatedProducts
-          ? _value.paginatedProducts
-          : paginatedProducts // ignore: cast_nullable_to_non_nullable
-              as PaginatedResponse<Product>?,
+      paginationResponse: freezed == paginationResponse
+          ? _value.paginationResponse
+          : paginationResponse // ignore: cast_nullable_to_non_nullable
+              as PaginationResponse<T>?,
       hasNext: null == hasNext
           ? _value.hasNext
           : hasNext // ignore: cast_nullable_to_non_nullable
@@ -75,55 +75,55 @@ class _$ProductsStateCopyWithImpl<$Res, $Val extends ProductsState>
 
   @override
   @pragma('vm:prefer-inline')
-  $PaginatedResponseCopyWith<Product, $Res>? get paginatedProducts {
-    if (_value.paginatedProducts == null) {
+  $PaginationResponseCopyWith<T, $Res>? get paginationResponse {
+    if (_value.paginationResponse == null) {
       return null;
     }
 
-    return $PaginatedResponseCopyWith<Product, $Res>(_value.paginatedProducts!,
+    return $PaginationResponseCopyWith<T, $Res>(_value.paginationResponse!,
         (value) {
-      return _then(_value.copyWith(paginatedProducts: value) as $Val);
+      return _then(_value.copyWith(paginationResponse: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$$_ProductsStateCopyWith<$Res>
-    implements $ProductsStateCopyWith<$Res> {
-  factory _$$_ProductsStateCopyWith(
-          _$_ProductsState value, $Res Function(_$_ProductsState) then) =
-      __$$_ProductsStateCopyWithImpl<$Res>;
+abstract class _$$_PaginationStateCopyWith<T, $Res>
+    implements $PaginationStateCopyWith<T, $Res> {
+  factory _$$_PaginationStateCopyWith(_$_PaginationState<T> value,
+          $Res Function(_$_PaginationState<T>) then) =
+      __$$_PaginationStateCopyWithImpl<T, $Res>;
   @override
   @useResult
   $Res call(
-      {PaginatedResponse<Product>? paginatedProducts,
+      {PaginationResponse<T>? paginationResponse,
       bool hasNext,
       bool isFetching});
 
   @override
-  $PaginatedResponseCopyWith<Product, $Res>? get paginatedProducts;
+  $PaginationResponseCopyWith<T, $Res>? get paginationResponse;
 }
 
 /// @nodoc
-class __$$_ProductsStateCopyWithImpl<$Res>
-    extends _$ProductsStateCopyWithImpl<$Res, _$_ProductsState>
-    implements _$$_ProductsStateCopyWith<$Res> {
-  __$$_ProductsStateCopyWithImpl(
-      _$_ProductsState _value, $Res Function(_$_ProductsState) _then)
+class __$$_PaginationStateCopyWithImpl<T, $Res>
+    extends _$PaginationStateCopyWithImpl<T, $Res, _$_PaginationState<T>>
+    implements _$$_PaginationStateCopyWith<T, $Res> {
+  __$$_PaginationStateCopyWithImpl(
+      _$_PaginationState<T> _value, $Res Function(_$_PaginationState<T>) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? paginatedProducts = freezed,
+    Object? paginationResponse = freezed,
     Object? hasNext = null,
     Object? isFetching = null,
   }) {
-    return _then(_$_ProductsState(
-      paginatedProducts: freezed == paginatedProducts
-          ? _value.paginatedProducts
-          : paginatedProducts // ignore: cast_nullable_to_non_nullable
-              as PaginatedResponse<Product>?,
+    return _then(_$_PaginationState<T>(
+      paginationResponse: freezed == paginationResponse
+          ? _value.paginationResponse
+          : paginationResponse // ignore: cast_nullable_to_non_nullable
+              as PaginationResponse<T>?,
       hasNext: null == hasNext
           ? _value.hasNext
           : hasNext // ignore: cast_nullable_to_non_nullable
@@ -138,13 +138,13 @@ class __$$_ProductsStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_ProductsState extends _ProductsState {
-  _$_ProductsState(
-      {this.paginatedProducts, this.hasNext = true, this.isFetching = false})
+class _$_PaginationState<T> extends _PaginationState<T> {
+  _$_PaginationState(
+      {this.paginationResponse, this.hasNext = true, this.isFetching = false})
       : super._();
 
   @override
-  final PaginatedResponse<Product>? paginatedProducts;
+  final PaginationResponse<T>? paginationResponse;
   @override
   @JsonKey()
   final bool hasNext;
@@ -154,16 +154,16 @@ class _$_ProductsState extends _ProductsState {
 
   @override
   String toString() {
-    return 'ProductsState(paginatedProducts: $paginatedProducts, hasNext: $hasNext, isFetching: $isFetching)';
+    return 'PaginationState<$T>(paginationResponse: $paginationResponse, hasNext: $hasNext, isFetching: $isFetching)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ProductsState &&
-            (identical(other.paginatedProducts, paginatedProducts) ||
-                other.paginatedProducts == paginatedProducts) &&
+            other is _$_PaginationState<T> &&
+            (identical(other.paginationResponse, paginationResponse) ||
+                other.paginationResponse == paginationResponse) &&
             (identical(other.hasNext, hasNext) || other.hasNext == hasNext) &&
             (identical(other.isFetching, isFetching) ||
                 other.isFetching == isFetching));
@@ -171,30 +171,31 @@ class _$_ProductsState extends _ProductsState {
 
   @override
   int get hashCode =>
-      Object.hash(runtimeType, paginatedProducts, hasNext, isFetching);
+      Object.hash(runtimeType, paginationResponse, hasNext, isFetching);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ProductsStateCopyWith<_$_ProductsState> get copyWith =>
-      __$$_ProductsStateCopyWithImpl<_$_ProductsState>(this, _$identity);
+  _$$_PaginationStateCopyWith<T, _$_PaginationState<T>> get copyWith =>
+      __$$_PaginationStateCopyWithImpl<T, _$_PaginationState<T>>(
+          this, _$identity);
 }
 
-abstract class _ProductsState extends ProductsState {
-  factory _ProductsState(
-      {final PaginatedResponse<Product>? paginatedProducts,
+abstract class _PaginationState<T> extends PaginationState<T> {
+  factory _PaginationState(
+      {final PaginationResponse<T>? paginationResponse,
       final bool hasNext,
-      final bool isFetching}) = _$_ProductsState;
-  _ProductsState._() : super._();
+      final bool isFetching}) = _$_PaginationState<T>;
+  _PaginationState._() : super._();
 
   @override
-  PaginatedResponse<Product>? get paginatedProducts;
+  PaginationResponse<T>? get paginationResponse;
   @override
   bool get hasNext;
   @override
   bool get isFetching;
   @override
   @JsonKey(ignore: true)
-  _$$_ProductsStateCopyWith<_$_ProductsState> get copyWith =>
+  _$$_PaginationStateCopyWith<T, _$_PaginationState<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -1,7 +1,7 @@
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../core/http/http_client.dart';
-import '../../../core/utils/paginated_response.dart';
+import '../../../core/models/pagination_response.dart';
 import '../../../core/utils/types.dart';
 import '../models/product.dart';
 
@@ -15,7 +15,7 @@ class ProductRepository {
 
   final HttpClient _client;
 
-  Future<PaginatedResponse<Product>> fetchProducts({
+  Future<PaginationResponse<Product>> fetchProducts({
     int limit = 10,
     int offset = 0,
   }) async {
@@ -27,7 +27,7 @@ class ProductRepository {
       },
     );
     final productsJson = (json['products'] as List).cast<JsonMap>();
-    return PaginatedResponse<Product>.fromResponse(
+    return PaginationResponse<Product>.fromResponse(
       productsJson.map(Product.fromJson).toList(),
       json,
     );

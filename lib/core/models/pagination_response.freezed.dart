@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'paginated_response.dart';
+part of 'pagination_response.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,31 +15,31 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$PaginatedResponse<T> {
+mixin _$PaginationResponse<T> {
   List<T> get results => throw _privateConstructorUsedError;
   int get total => throw _privateConstructorUsedError;
   int get limit => throw _privateConstructorUsedError;
   int get offset => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $PaginatedResponseCopyWith<T, PaginatedResponse<T>> get copyWith =>
+  $PaginationResponseCopyWith<T, PaginationResponse<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $PaginatedResponseCopyWith<T, $Res> {
-  factory $PaginatedResponseCopyWith(PaginatedResponse<T> value,
-          $Res Function(PaginatedResponse<T>) then) =
-      _$PaginatedResponseCopyWithImpl<T, $Res, PaginatedResponse<T>>;
+abstract class $PaginationResponseCopyWith<T, $Res> {
+  factory $PaginationResponseCopyWith(PaginationResponse<T> value,
+          $Res Function(PaginationResponse<T>) then) =
+      _$PaginationResponseCopyWithImpl<T, $Res, PaginationResponse<T>>;
   @useResult
   $Res call({List<T> results, int total, int limit, int offset});
 }
 
 /// @nodoc
-class _$PaginatedResponseCopyWithImpl<T, $Res,
-        $Val extends PaginatedResponse<T>>
-    implements $PaginatedResponseCopyWith<T, $Res> {
-  _$PaginatedResponseCopyWithImpl(this._value, this._then);
+class _$PaginationResponseCopyWithImpl<T, $Res,
+        $Val extends PaginationResponse<T>>
+    implements $PaginationResponseCopyWith<T, $Res> {
+  _$PaginationResponseCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -76,22 +76,22 @@ class _$PaginatedResponseCopyWithImpl<T, $Res,
 }
 
 /// @nodoc
-abstract class _$$_PaginatedResponseCopyWith<T, $Res>
-    implements $PaginatedResponseCopyWith<T, $Res> {
-  factory _$$_PaginatedResponseCopyWith(_$_PaginatedResponse<T> value,
-          $Res Function(_$_PaginatedResponse<T>) then) =
-      __$$_PaginatedResponseCopyWithImpl<T, $Res>;
+abstract class _$$_PaginationResponseCopyWith<T, $Res>
+    implements $PaginationResponseCopyWith<T, $Res> {
+  factory _$$_PaginationResponseCopyWith(_$_PaginationResponse<T> value,
+          $Res Function(_$_PaginationResponse<T>) then) =
+      __$$_PaginationResponseCopyWithImpl<T, $Res>;
   @override
   @useResult
   $Res call({List<T> results, int total, int limit, int offset});
 }
 
 /// @nodoc
-class __$$_PaginatedResponseCopyWithImpl<T, $Res>
-    extends _$PaginatedResponseCopyWithImpl<T, $Res, _$_PaginatedResponse<T>>
-    implements _$$_PaginatedResponseCopyWith<T, $Res> {
-  __$$_PaginatedResponseCopyWithImpl(_$_PaginatedResponse<T> _value,
-      $Res Function(_$_PaginatedResponse<T>) _then)
+class __$$_PaginationResponseCopyWithImpl<T, $Res>
+    extends _$PaginationResponseCopyWithImpl<T, $Res, _$_PaginationResponse<T>>
+    implements _$$_PaginationResponseCopyWith<T, $Res> {
+  __$$_PaginationResponseCopyWithImpl(_$_PaginationResponse<T> _value,
+      $Res Function(_$_PaginationResponse<T>) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -102,7 +102,7 @@ class __$$_PaginatedResponseCopyWithImpl<T, $Res>
     Object? limit = null,
     Object? offset = null,
   }) {
-    return _then(_$_PaginatedResponse<T>(
+    return _then(_$_PaginationResponse<T>(
       results: null == results
           ? _value._results
           : results // ignore: cast_nullable_to_non_nullable
@@ -125,8 +125,8 @@ class __$$_PaginatedResponseCopyWithImpl<T, $Res>
 
 /// @nodoc
 
-class _$_PaginatedResponse<T> extends _PaginatedResponse<T> {
-  const _$_PaginatedResponse(
+class _$_PaginationResponse<T> extends _PaginationResponse<T> {
+  const _$_PaginationResponse(
       {final List<T> results = const [],
       this.total = 0,
       this.limit = 0,
@@ -155,14 +155,14 @@ class _$_PaginatedResponse<T> extends _PaginatedResponse<T> {
 
   @override
   String toString() {
-    return 'PaginatedResponse<$T>(results: $results, total: $total, limit: $limit, offset: $offset)';
+    return 'PaginationResponse<$T>(results: $results, total: $total, limit: $limit, offset: $offset)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_PaginatedResponse<T> &&
+            other is _$_PaginationResponse<T> &&
             const DeepCollectionEquality().equals(other._results, _results) &&
             (identical(other.total, total) || other.total == total) &&
             (identical(other.limit, limit) || other.limit == limit) &&
@@ -176,18 +176,18 @@ class _$_PaginatedResponse<T> extends _PaginatedResponse<T> {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_PaginatedResponseCopyWith<T, _$_PaginatedResponse<T>> get copyWith =>
-      __$$_PaginatedResponseCopyWithImpl<T, _$_PaginatedResponse<T>>(
+  _$$_PaginationResponseCopyWith<T, _$_PaginationResponse<T>> get copyWith =>
+      __$$_PaginationResponseCopyWithImpl<T, _$_PaginationResponse<T>>(
           this, _$identity);
 }
 
-abstract class _PaginatedResponse<T> extends PaginatedResponse<T> {
-  const factory _PaginatedResponse(
+abstract class _PaginationResponse<T> extends PaginationResponse<T> {
+  const factory _PaginationResponse(
       {final List<T> results,
       final int total,
       final int limit,
-      final int offset}) = _$_PaginatedResponse<T>;
-  const _PaginatedResponse._() : super._();
+      final int offset}) = _$_PaginationResponse<T>;
+  const _PaginationResponse._() : super._();
 
   @override
   List<T> get results;
@@ -199,6 +199,6 @@ abstract class _PaginatedResponse<T> extends PaginatedResponse<T> {
   int get offset;
   @override
   @JsonKey(ignore: true)
-  _$$_PaginatedResponseCopyWith<T, _$_PaginatedResponse<T>> get copyWith =>
+  _$$_PaginationResponseCopyWith<T, _$_PaginationResponse<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
