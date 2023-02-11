@@ -6,6 +6,7 @@ import '../../ui/screens/cart/shopping_cart/shopping_cart_screen.dart';
 import '../../ui/screens/product/detail/product_detail_screen.dart';
 import '../../ui/screens/product/list/product_list_screen.dart';
 import '../../ui/screens/product/search/product_search_screen.dart';
+import '../../ui/screens/product/search_result/product_search_result_screen.dart';
 import '../../ui/screens/root/root_screen.dart';
 import '../../ui/screens/user/login/login_screen.dart';
 import '../../ui/screens/user/profile/profile_screen.dart';
@@ -39,14 +40,15 @@ final appRouterProvider = Provider((ref) {
               path: '',
               page: ProductListScreen,
             ),
-            AutoRoute<void>(
-              path: '',
-              page: ProductSearchScreen,
-              fullscreenDialog: true,
-            ),
             CustomRoute<void>(
               path: '',
               page: ProductSearchScreen,
+              transitionsBuilder: TransitionsBuilders.fadeIn,
+              durationInMilliseconds: 200,
+            ),
+            CustomRoute<void>(
+              path: '',
+              page: ProductSeachResultScreen,
               transitionsBuilder: TransitionsBuilders.fadeIn,
               durationInMilliseconds: 200,
             ),

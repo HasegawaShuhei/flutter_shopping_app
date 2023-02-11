@@ -6,7 +6,7 @@ class ProductSearchBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Center(
-      child: Text('data'),
+      child: Text('検索履歴'),
     );
   }
 }

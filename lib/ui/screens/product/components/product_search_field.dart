@@ -16,7 +16,7 @@ class ProductSearchField extends StatelessWidget {
   final bool enabled;
   final bool autofocus;
   final void Function()? onClear;
-  final void Function()? onSubmitted;
+  final Future<void> Function()? onSubmitted;
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +43,9 @@ class ProductSearchField extends StatelessWidget {
           prefixIcon: InkWell(
             customBorder: const CircleBorder(),
             onTap: () {
-              print('hello');
+              final text = controller?.text ?? '';
+              if (text.isEmpty) return;
+              onSubmitted?.call();
             },
             child: const Icon(
               Icons.search,
@@ -55,7 +57,7 @@ class ProductSearchField extends StatelessWidget {
                   valueListenable: controller!,
                   builder: (_, value, __) {
                     return Visibility(
-                      visible: value.text.isNotEmpty,
+                      visible: enabled && value.text.isNotEmpty,
                       child: InkWell(
                         customBorder: const CircleBorder(),
                         onTap: () => onClear?.call(),
@@ -69,9 +71,9 @@ class ProductSearchField extends StatelessWidget {
                 )
               : null,
         ),
-        onSubmitted: (value) {
+        onSubmitted: (value) async {
           if (value.isEmpty) return;
-          print(value);
+          await onSubmitted?.call();
         },
       ),
     );

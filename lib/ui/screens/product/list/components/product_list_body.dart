@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '../../../../../features/product/providers/products_notifier.dart';
+import '../../components/product_list.dart';
 import '../product_list_screen_controller.dart';
-import 'product_list.dart';
 import 'product_list_app_bar.dart';
 
-class ProductListScreenBody extends HookConsumerWidget {
-  const ProductListScreenBody({super.key});
+class ProductListBody extends HookConsumerWidget {
+  const ProductListBody({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -15,9 +16,9 @@ class ProductListScreenBody extends HookConsumerWidget {
     return SafeArea(
       child: CustomScrollView(
         controller: scrollController,
-        slivers: const [
-          ProductListAppBar(),
-          ProductList(),
+        slivers: [
+          const ProductListAppBar(),
+          ProductList(provider: productsNotifierProvider),
         ],
       ),
     );

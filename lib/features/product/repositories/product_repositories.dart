@@ -32,4 +32,23 @@ class ProductRepository {
       json,
     );
   }
+
+  Future<PaginationResponse<Product>> searchProducts({
+    required String query,
+    int limit = 10,
+    int offset = 0,
+  }) async {
+    final json = await _client.get(
+      path: '/products/search?q=$query',
+      queryParameters: <String, dynamic>{
+        'limit': limit,
+        'skip': offset,
+      },
+    );
+    final productsJson = (json['products'] as List).cast<JsonMap>();
+    return PaginationResponse<Product>.fromResponse(
+      productsJson.map(Product.fromJson).toList(),
+      json,
+    );
+  }
 }

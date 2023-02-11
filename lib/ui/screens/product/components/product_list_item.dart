@@ -5,7 +5,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../../../core/styles/app_colors.dart';
 import '../../../../../features/product/models/product.dart';
-import '../../../../components/cached_circle_avator.dart';
+import '../../../components/cached_circle_avator.dart';
 
 class ProductListItem extends HookConsumerWidget {
   const ProductListItem({

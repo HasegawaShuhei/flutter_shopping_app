@@ -32,8 +32,10 @@ class PaginationListView<T> extends HookConsumerWidget {
     });
     final asyncValue = ref.watch(provider);
 
-    /// AsyncLoading中、またはvalueがないとき(初回fetchがエラーのときなど？)はインジケーターを表示する
-    if (asyncValue is AsyncLoading || !asyncValue.hasValue) {
+    /// AsyncLoading中、Refreshing中、またはvalueがないとき(初回fetchがエラーのときなど？)はインジケーターを表示する
+    if (asyncValue is AsyncLoading ||
+        asyncValue.isRefreshing ||
+        !asyncValue.hasValue) {
       return const SliverLoadingIndicator();
     }
 
