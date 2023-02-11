@@ -27,12 +27,7 @@ class ProductSearchScreenController {
   Future<void> onSearch({required BuildContext context}) async {
     _ref.invalidate(searchProductsNotifierProvider);
     context.router.popUntilRoot();
-    _setQuery();
     await context.router.push(const ProductSeachResultRoute());
-  }
-
-  void _setQuery() {
-    searchQueryController.text = _ref.read(searchProductQueryProvider);
   }
 
   void _initTextController() {

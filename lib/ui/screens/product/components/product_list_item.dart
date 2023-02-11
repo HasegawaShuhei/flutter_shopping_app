@@ -7,6 +7,7 @@ import '../../../../../core/styles/app_colors.dart';
 import '../../../../../features/product/models/product.dart';
 import '../../../components/cached_circle_avator.dart';
 
+// TODO(me): componentのpaddingを削除する
 class ProductListItem extends HookConsumerWidget {
   const ProductListItem({
     super.key,

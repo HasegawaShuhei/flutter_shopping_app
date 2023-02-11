@@ -7,8 +7,8 @@ import '../../../../features/product/models/product.dart';
 import '../../../components/pagination_list_view.dart';
 import 'product_list_item.dart';
 
-class ProductList extends HookConsumerWidget {
-  const ProductList({super.key, required this.provider});
+class PaginationProductList extends HookConsumerWidget {
+  const PaginationProductList({super.key, required this.provider});
 
   final AutoDisposeAsyncNotifierProvider<
       PaginationAsyncNotifierInterface<Product>,

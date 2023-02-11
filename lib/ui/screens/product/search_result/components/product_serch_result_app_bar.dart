@@ -12,14 +12,17 @@ class ProductSearchResultAppBar extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final controller = ref
-        .read(productSearchResultScreenControllerProvider)
+        .watch(productSearchResultScreenControllerProvider)
         .searchQueryController;
     return SliverAppBar(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       title: GestureDetector(
         behavior: HitTestBehavior.opaque,
         onTap: () => context.router.push(const ProductSearchRoute()),
-        child: ProductSearchField(controller: controller, enabled: false),
+        child: ProductSearchField(
+          controller: controller,
+          enabled: false,
+        ),
       ),
     );
   }

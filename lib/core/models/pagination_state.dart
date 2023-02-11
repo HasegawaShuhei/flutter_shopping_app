@@ -16,4 +16,5 @@ class PaginationState<T> with _$PaginationState<T> {
   const PaginationState._();
 
   List<T> get results => paginationResponse?.results ?? [];
+  String get totalString => (paginationResponse?.total ?? 0).toString();
 }

@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 class AppTextStytles {
+  static const s16 = TextStyle(
+    fontSize: 16,
+  );
   static const s16Wbold = TextStyle(
     fontSize: 16,
     fontWeight: FontWeight.bold,

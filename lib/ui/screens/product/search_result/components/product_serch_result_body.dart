@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../../../../features/product/providers/search_products_notifier.dart';
-import '../../components/product_list.dart';
 import '../product_search_result_screen_controller.dart';
+import 'product_search_result_list.dart';
 import 'product_serch_result_app_bar.dart';
+import 'product_serch_result_number.dart';
 
 class ProductSeachResultBody extends HookConsumerWidget {
   const ProductSeachResultBody({super.key});
@@ -16,9 +16,10 @@ class ProductSeachResultBody extends HookConsumerWidget {
     return SafeArea(
       child: CustomScrollView(
         controller: scrollController,
-        slivers: [
-          const ProductSearchResultAppBar(),
-          ProductList(provider: searchProductsNotifierProvider),
+        slivers: const [
+          ProductSearchResultAppBar(),
+          ProductSearchResultNumber(),
+          ProductSearchResultList(),
         ],
       ),
     );

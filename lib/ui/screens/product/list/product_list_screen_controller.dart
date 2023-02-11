@@ -8,7 +8,9 @@ import '../../../../features/product/providers/products_notifier.dart';
 import '../../../../features/product/providers/search_product_query.dart';
 
 final productListScreenControllerProvider =
-    Provider<ProductListScreenController>(ProductListScreenController.new);
+    Provider.autoDispose<ProductListScreenController>(
+  ProductListScreenController.new,
+);
 
 class ProductListScreenController {
   ProductListScreenController(this._ref) {

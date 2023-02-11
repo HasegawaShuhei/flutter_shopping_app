@@ -41,18 +41,15 @@ class PaginationListView<T> extends HookConsumerWidget {
 
     final results = asyncValue.value!.results;
     final isFetching = asyncValue.value!.isFetching;
-    return SliverPadding(
-      padding: const EdgeInsets.all(4),
-      sliver: SliverList(
-        delegate: SliverChildBuilderDelegate(
-          (context, index) {
-            if (isFetching && index == results.length) {
-              return const _LoadingMoreIndicator();
-            }
-            return listItem(results[index]);
-          },
-          childCount: results.length + (isFetching ? 1 : 0),
-        ),
+    return SliverList(
+      delegate: SliverChildBuilderDelegate(
+        (context, index) {
+          if (isFetching && index == results.length) {
+            return const _LoadingMoreIndicator();
+          }
+          return listItem(results[index]);
+        },
+        childCount: results.length + (isFetching ? 1 : 0),
       ),
     );
   }
