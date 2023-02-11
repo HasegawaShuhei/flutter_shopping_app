@@ -6,8 +6,12 @@ import '../../../../features/product/providers/search_product_query.dart';
 import '../../../../features/product/providers/search_products_notifier.dart';
 
 final productSearchResultScreenControllerProvider =
-    Provider<ProductSearchResultScreenController>(
-  ProductSearchResultScreenController.new,
+    Provider.autoDispose<ProductSearchResultScreenController>(
+  (ref) {
+    /// appBarに検索ワードを反映させるためwatchする
+    ref.watch(searchProductQueryProvider);
+    return ProductSearchResultScreenController(ref);
+  },
 );
 
 class ProductSearchResultScreenController {
