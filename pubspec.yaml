@@ -20,11 +20,11 @@ dependencies:
   flutter_dotenv: ^5.0.2
   flutter_hooks: ^0.18.5+1
   flutter_rating_bar: ^4.0.1
-  flutter_secure_storage: ^7.0.1
+  flutter_secure_storage: ^8.0.0
   freezed: ^2.1.0+1
   freezed_annotation: ^2.1.0
   gap: ^2.0.0
-  hooks_riverpod: ^2.0.0
+  hooks_riverpod: ^2.2.0
   http: ^0.13.5
   import_sorter: ^4.6.0
   intl: ^0.18.0
@@ -32,6 +32,7 @@ dependencies:
   json_serializable: ^6.6.0
   logger: ^1.1.0
   retrofit: ^3.3.1
+  riverpod_annotation: ^1.2.1
   shared_preferences: ^2.0.15
   shimmer: ^2.0.0
   vibration: ^1.7.5
@@ -44,6 +45,8 @@ dev_dependencies:
   http_mock_adapter: ^0.3.3
   mockito: ^5.3.0
   pedantic_mono: ^1.19.2
+  retrofit_generator: ^4.2.0
+  riverpod_generator: ^1.2.0
 
 flutter:
   uses-material-design: true
