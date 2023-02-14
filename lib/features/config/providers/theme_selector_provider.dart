@@ -10,16 +10,13 @@ final themeSelectorNotifierProvider =
 );
 
 class ThemeSelectorNotifier extends Notifier<ThemeMode> {
-  ConfigLocalRepository get _repository =>
-      ref.read(configLocalRepositoryProvider);
-
   @override
   ThemeMode build() {
     return _init();
   }
 
   ThemeMode _init() {
-    final themeIndex = _repository.getThemeIndex();
+    final themeIndex = ref.read(configLocalRepositoryProvider).getThemeIndex();
     if (themeIndex == null) {
       return ThemeMode.system;
     }
@@ -31,7 +28,9 @@ class ThemeSelectorNotifier extends Notifier<ThemeMode> {
   }
 
   Future<void> changeAndSave({required ThemeMode theme}) async {
-    await _repository.setThemeIndex(index: theme.index);
+    await ref
+        .read(configLocalRepositoryProvider)
+        .setThemeIndex(index: theme.index);
     state = theme;
   }
 }

@@ -5,8 +5,7 @@ import '../repositories/user_repository.dart';
 
 final userProvider = FutureProvider<User>(
   (ref) async {
-    final repository = ref.read(userRepositoryProvider);
-    return repository.fetch();
+    return ref.read(userRepositoryProvider).fetch();
   },
   name: 'userProvider',
 );

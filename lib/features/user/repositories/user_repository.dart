@@ -5,7 +5,7 @@ import '../models/user.dart';
 import '../models/user_credentials.dart';
 
 final userRepositoryProvider = Provider<UserRepository>((ref) {
-  final client = ref.read(httpClientProvider);
+  final client = ref.watch(httpClientProvider);
   return UserRepository(client);
 });
 

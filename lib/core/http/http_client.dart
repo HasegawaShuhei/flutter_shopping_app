@@ -8,7 +8,7 @@ import 'abstract_http_client.dart';
 import 'dio/dio.dart';
 
 final httpClientProvider = Provider<HttpClient>((ref) {
-  final dio = ref.read(dioProvider);
+  final dio = ref.watch(dioProvider);
   return HttpClient(dio);
 });
 

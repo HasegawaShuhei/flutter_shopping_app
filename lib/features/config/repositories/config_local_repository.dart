@@ -4,7 +4,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../../../core/providers/shared_preferences.dart';
 
 final configLocalRepositoryProvider = Provider<ConfigLocalRepository>((ref) {
-  final sharedPreferences = ref.read(sharedPreferencesProvider);
+  final sharedPreferences = ref.watch(sharedPreferencesProvider);
   return ConfigLocalRepository(sharedPreferences);
 });
 

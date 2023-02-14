@@ -14,7 +14,6 @@ class LoginScreenController {
   }
 
   final Ref _ref;
-  LoginNotifier get _notifier => _ref.read(loginNotifierProvider.notifier);
 
   late final TextEditingController nameController;
   late final TextEditingController passwordController;
@@ -26,10 +25,10 @@ class LoginScreenController {
       return;
     }
 
-    await _notifier.login(
-      userName: nameController.text,
-      password: passwordController.text,
-    );
+    await _ref.read(loginNotifierProvider.notifier).login(
+          userName: nameController.text,
+          password: passwordController.text,
+        );
   }
 
   /// textFieldのバリデーション

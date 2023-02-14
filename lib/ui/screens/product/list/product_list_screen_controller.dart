@@ -17,7 +17,6 @@ class ProductListScreenController {
     _initializeScrollController();
   }
   final Ref _ref;
-  ProductsNotifier get _notifer => _ref.read(productsNotifierProvider.notifier);
 
   late final ScrollController scrollController;
 
@@ -33,7 +32,7 @@ class ProductListScreenController {
         final scrollValue =
             scrollController.offset / scrollController.position.maxScrollExtent;
         if (scrollValue > scrollValueThreshold) {
-          await _notifer.loadMore();
+          await _ref.read(productsNotifierProvider.notifier).loadMore();
         }
       });
   }

@@ -8,9 +8,9 @@ import 'response_intercepter.dart';
 
 final dioProvider = Provider<Dio>((ref) {
   final interceptors = [
-    ref.read(headerInterceptorProvider),
-    ref.read(requestInterceptorProvider),
-    ref.read(responseInterceptorProvider),
+    ref.watch(headerInterceptorProvider),
+    ref.watch(requestInterceptorProvider),
+    ref.watch(responseInterceptorProvider),
   ];
   return _buildDio(interceptors: interceptors);
 });

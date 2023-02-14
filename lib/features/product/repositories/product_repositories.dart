@@ -6,7 +6,7 @@ import '../../../core/utils/types.dart';
 import '../models/product.dart';
 
 final productRepositoryProvider = Provider<ProductRepository>((ref) {
-  final client = ref.read(httpClientProvider);
+  final client = ref.watch(httpClientProvider);
   return ProductRepository(client);
 });
 

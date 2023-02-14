@@ -18,9 +18,7 @@ class ProfileScreen extends HookConsumerWidget {
         child: Column(
           children: [
             ElevatedButton(
-              onPressed: () {
-                ref.read(userServiceProvider).logout();
-              },
+              onPressed: () async => ref.read(userServiceProvider).logout(),
               child: const Text('logout'),
             ),
             const _ThemeSelector(),

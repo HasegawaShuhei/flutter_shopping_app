@@ -20,8 +20,6 @@ class ProductSearchResultScreenController {
     _ref.onDispose(_disposeTextController);
   }
   final Ref _ref;
-  SearchProductsNotifier get _notifer =>
-      _ref.read(searchProductsNotifierProvider.notifier);
 
   late final ScrollController scrollController;
   late final TextEditingController searchQueryController;
@@ -32,7 +30,7 @@ class ProductSearchResultScreenController {
         final scrollValue =
             scrollController.offset / scrollController.position.maxScrollExtent;
         if (scrollValue > scrollValueThreshold) {
-          await _notifer.loadMore();
+          await _ref.read(searchProductsNotifierProvider.notifier).loadMore();
         }
       });
     searchQueryController = TextEditingController();

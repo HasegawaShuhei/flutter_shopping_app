@@ -16,7 +16,7 @@ import 'auth_guard.dart';
 export 'app_router.gr.dart';
 
 final appRouterProvider = Provider((ref) {
-  final authGuard = ref.read(authGuardProvider);
+  final authGuard = ref.watch(authGuardProvider);
   return AppRouter(authGuard: authGuard);
 });
 
