@@ -9,6 +9,8 @@ linter:
     prefer_relative_imports: true
 
 analyzer:
+  plugins:
+    - custom_lint
   exclude:
     - lib/**/**.freezed.dart
     - lib/**/**.g.dart
