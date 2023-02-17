@@ -8,14 +8,14 @@ class Product with _$Product {
   factory Product({
     required int id,
     required String title,
-    required String description,
+    String? description,
     required int price,
     required double discountPercentage,
-    required double rating,
-    required int stock,
-    required String brand,
-    @JsonKey(name: 'thumbnail') required String thumbnailUrl,
-    @JsonKey(name: 'images') required List<String> imageUrls,
+    double? rating,
+    int? stock,
+    String? brand,
+    @JsonKey(name: 'thumbnail') String? thumbnailUrl,
+    @JsonKey(name: 'images') List<String>? imageUrls,
   }) = _Product;
 
   const Product._();

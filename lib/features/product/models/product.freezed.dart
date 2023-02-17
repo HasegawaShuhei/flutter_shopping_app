@@ -22,16 +22,16 @@ Product _$ProductFromJson(Map<String, dynamic> json) {
 mixin _$Product {
   int get id => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
-  String get description => throw _privateConstructorUsedError;
+  String? get description => throw _privateConstructorUsedError;
   int get price => throw _privateConstructorUsedError;
   double get discountPercentage => throw _privateConstructorUsedError;
-  double get rating => throw _privateConstructorUsedError;
-  int get stock => throw _privateConstructorUsedError;
-  String get brand => throw _privateConstructorUsedError;
+  double? get rating => throw _privateConstructorUsedError;
+  int? get stock => throw _privateConstructorUsedError;
+  String? get brand => throw _privateConstructorUsedError;
   @JsonKey(name: 'thumbnail')
-  String get thumbnailUrl => throw _privateConstructorUsedError;
+  String? get thumbnailUrl => throw _privateConstructorUsedError;
   @JsonKey(name: 'images')
-  List<String> get imageUrls => throw _privateConstructorUsedError;
+  List<String>? get imageUrls => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -46,14 +46,14 @@ abstract class $ProductCopyWith<$Res> {
   $Res call(
       {int id,
       String title,
-      String description,
+      String? description,
       int price,
       double discountPercentage,
-      double rating,
-      int stock,
-      String brand,
-      @JsonKey(name: 'thumbnail') String thumbnailUrl,
-      @JsonKey(name: 'images') List<String> imageUrls});
+      double? rating,
+      int? stock,
+      String? brand,
+      @JsonKey(name: 'thumbnail') String? thumbnailUrl,
+      @JsonKey(name: 'images') List<String>? imageUrls});
 }
 
 /// @nodoc
@@ -71,14 +71,14 @@ class _$ProductCopyWithImpl<$Res, $Val extends Product>
   $Res call({
     Object? id = null,
     Object? title = null,
-    Object? description = null,
+    Object? description = freezed,
     Object? price = null,
     Object? discountPercentage = null,
-    Object? rating = null,
-    Object? stock = null,
-    Object? brand = null,
-    Object? thumbnailUrl = null,
-    Object? imageUrls = null,
+    Object? rating = freezed,
+    Object? stock = freezed,
+    Object? brand = freezed,
+    Object? thumbnailUrl = freezed,
+    Object? imageUrls = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -89,10 +89,10 @@ class _$ProductCopyWithImpl<$Res, $Val extends Product>
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
-      description: null == description
+      description: freezed == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       price: null == price
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
@@ -101,26 +101,26 @@ class _$ProductCopyWithImpl<$Res, $Val extends Product>
           ? _value.discountPercentage
           : discountPercentage // ignore: cast_nullable_to_non_nullable
               as double,
-      rating: null == rating
+      rating: freezed == rating
           ? _value.rating
           : rating // ignore: cast_nullable_to_non_nullable
-              as double,
-      stock: null == stock
+              as double?,
+      stock: freezed == stock
           ? _value.stock
           : stock // ignore: cast_nullable_to_non_nullable
-              as int,
-      brand: null == brand
+              as int?,
+      brand: freezed == brand
           ? _value.brand
           : brand // ignore: cast_nullable_to_non_nullable
-              as String,
-      thumbnailUrl: null == thumbnailUrl
+              as String?,
+      thumbnailUrl: freezed == thumbnailUrl
           ? _value.thumbnailUrl
           : thumbnailUrl // ignore: cast_nullable_to_non_nullable
-              as String,
-      imageUrls: null == imageUrls
+              as String?,
+      imageUrls: freezed == imageUrls
           ? _value.imageUrls
           : imageUrls // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+              as List<String>?,
     ) as $Val);
   }
 }
@@ -135,14 +135,14 @@ abstract class _$$_ProductCopyWith<$Res> implements $ProductCopyWith<$Res> {
   $Res call(
       {int id,
       String title,
-      String description,
+      String? description,
       int price,
       double discountPercentage,
-      double rating,
-      int stock,
-      String brand,
-      @JsonKey(name: 'thumbnail') String thumbnailUrl,
-      @JsonKey(name: 'images') List<String> imageUrls});
+      double? rating,
+      int? stock,
+      String? brand,
+      @JsonKey(name: 'thumbnail') String? thumbnailUrl,
+      @JsonKey(name: 'images') List<String>? imageUrls});
 }
 
 /// @nodoc
@@ -157,14 +157,14 @@ class __$$_ProductCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? title = null,
-    Object? description = null,
+    Object? description = freezed,
     Object? price = null,
     Object? discountPercentage = null,
-    Object? rating = null,
-    Object? stock = null,
-    Object? brand = null,
-    Object? thumbnailUrl = null,
-    Object? imageUrls = null,
+    Object? rating = freezed,
+    Object? stock = freezed,
+    Object? brand = freezed,
+    Object? thumbnailUrl = freezed,
+    Object? imageUrls = freezed,
   }) {
     return _then(_$_Product(
       id: null == id
@@ -175,10 +175,10 @@ class __$$_ProductCopyWithImpl<$Res>
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
-      description: null == description
+      description: freezed == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       price: null == price
           ? _value.price
           : price // ignore: cast_nullable_to_non_nullable
@@ -187,26 +187,26 @@ class __$$_ProductCopyWithImpl<$Res>
           ? _value.discountPercentage
           : discountPercentage // ignore: cast_nullable_to_non_nullable
               as double,
-      rating: null == rating
+      rating: freezed == rating
           ? _value.rating
           : rating // ignore: cast_nullable_to_non_nullable
-              as double,
-      stock: null == stock
+              as double?,
+      stock: freezed == stock
           ? _value.stock
           : stock // ignore: cast_nullable_to_non_nullable
-              as int,
-      brand: null == brand
+              as int?,
+      brand: freezed == brand
           ? _value.brand
           : brand // ignore: cast_nullable_to_non_nullable
-              as String,
-      thumbnailUrl: null == thumbnailUrl
+              as String?,
+      thumbnailUrl: freezed == thumbnailUrl
           ? _value.thumbnailUrl
           : thumbnailUrl // ignore: cast_nullable_to_non_nullable
-              as String,
-      imageUrls: null == imageUrls
+              as String?,
+      imageUrls: freezed == imageUrls
           ? _value._imageUrls
           : imageUrls // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+              as List<String>?,
     ));
   }
 }
@@ -217,14 +217,14 @@ class _$_Product extends _Product {
   _$_Product(
       {required this.id,
       required this.title,
-      required this.description,
+      this.description,
       required this.price,
       required this.discountPercentage,
-      required this.rating,
-      required this.stock,
-      required this.brand,
-      @JsonKey(name: 'thumbnail') required this.thumbnailUrl,
-      @JsonKey(name: 'images') required final List<String> imageUrls})
+      this.rating,
+      this.stock,
+      this.brand,
+      @JsonKey(name: 'thumbnail') this.thumbnailUrl,
+      @JsonKey(name: 'images') final List<String>? imageUrls})
       : _imageUrls = imageUrls,
         super._();
 
@@ -236,27 +236,29 @@ class _$_Product extends _Product {
   @override
   final String title;
   @override
-  final String description;
+  final String? description;
   @override
   final int price;
   @override
   final double discountPercentage;
   @override
-  final double rating;
+  final double? rating;
   @override
-  final int stock;
+  final int? stock;
   @override
-  final String brand;
+  final String? brand;
   @override
   @JsonKey(name: 'thumbnail')
-  final String thumbnailUrl;
-  final List<String> _imageUrls;
+  final String? thumbnailUrl;
+  final List<String>? _imageUrls;
   @override
   @JsonKey(name: 'images')
-  List<String> get imageUrls {
+  List<String>? get imageUrls {
+    final value = _imageUrls;
+    if (value == null) return null;
     if (_imageUrls is EqualUnmodifiableListView) return _imageUrls;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_imageUrls);
+    return EqualUnmodifiableListView(value);
   }
 
   @override
@@ -316,17 +318,16 @@ class _$_Product extends _Product {
 
 abstract class _Product extends Product {
   factory _Product(
-          {required final int id,
-          required final String title,
-          required final String description,
-          required final int price,
-          required final double discountPercentage,
-          required final double rating,
-          required final int stock,
-          required final String brand,
-          @JsonKey(name: 'thumbnail') required final String thumbnailUrl,
-          @JsonKey(name: 'images') required final List<String> imageUrls}) =
-      _$_Product;
+      {required final int id,
+      required final String title,
+      final String? description,
+      required final int price,
+      required final double discountPercentage,
+      final double? rating,
+      final int? stock,
+      final String? brand,
+      @JsonKey(name: 'thumbnail') final String? thumbnailUrl,
+      @JsonKey(name: 'images') final List<String>? imageUrls}) = _$_Product;
   _Product._() : super._();
 
   factory _Product.fromJson(Map<String, dynamic> json) = _$_Product.fromJson;
@@ -336,23 +337,23 @@ abstract class _Product extends Product {
   @override
   String get title;
   @override
-  String get description;
+  String? get description;
   @override
   int get price;
   @override
   double get discountPercentage;
   @override
-  double get rating;
+  double? get rating;
   @override
-  int get stock;
+  int? get stock;
   @override
-  String get brand;
+  String? get brand;
   @override
   @JsonKey(name: 'thumbnail')
-  String get thumbnailUrl;
+  String? get thumbnailUrl;
   @override
   @JsonKey(name: 'images')
-  List<String> get imageUrls;
+  List<String>? get imageUrls;
   @override
   @JsonKey(ignore: true)
   _$$_ProductCopyWith<_$_Product> get copyWith =>

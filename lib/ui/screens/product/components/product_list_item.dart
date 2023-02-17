@@ -25,7 +25,7 @@ class ProductListItem extends HookConsumerWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             CachedCircleAvatar(
-              url: product.thumbnailUrl,
+              url: product.thumbnailUrl!,
               size: 48,
             ),
             const Gap(16),
@@ -33,9 +33,9 @@ class ProductListItem extends HookConsumerWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(product.brand),
+                  Text(product.brand!),
                   Text(product.title),
-                  _RatingBar(rating: product.rating),
+                  _RatingBar(rating: product.rating!),
                   Text(product.priceForDisplay),
                 ],
               ),
