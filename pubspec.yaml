@@ -13,7 +13,7 @@ dependencies:
   cached_network_image: ^3.2.3
   collection: ^1.16.0
   cupertino_icons: ^1.0.2
-  dio: ^4.0.6
+  dio: ^5.0.0
   flutter:
     sdk: flutter
   flutter_cache_manager: ^3.3.0
@@ -31,7 +31,7 @@ dependencies:
   json_annotation: ^4.8.0
   json_serializable: ^6.6.0
   logger: ^1.1.0
-  retrofit: ^3.3.1
+  retrofit: ^4.0.1
   riverpod_annotation: ^1.2.1
   shared_preferences: ^2.0.15
   shimmer: ^2.0.0
@@ -43,10 +43,10 @@ dev_dependencies:
   custom_lint: ^0.2.5
   flutter_test:
     sdk: flutter
-  http_mock_adapter: ^0.3.3
+  http_mock_adapter: ^0.4.2
   mockito: ^5.3.0
   pedantic_mono: ^1.19.2
-  retrofit_generator: ^4.2.0
+  retrofit_generator: ^5.0.0
   riverpod_generator: ^1.2.0
   riverpod_lint: ^1.0.1
   
