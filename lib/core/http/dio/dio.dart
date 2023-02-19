@@ -1,4 +1,3 @@
-import 'package:dio/adapter.dart';
 import 'package:dio/dio.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -17,11 +16,11 @@ final dioProvider = Provider<Dio>((ref) {
 
 Dio _buildDio({required List<Interceptor> interceptors}) {
   final dio = Dio()
-    ..httpClientAdapter = DefaultHttpClientAdapter()
+    ..httpClientAdapter = HttpClientAdapter()
     ..options = BaseOptions(
       baseUrl: 'https://dummyjson.com',
-      connectTimeout: 5000,
-      receiveTimeout: 3000,
+      connectTimeout: const Duration(milliseconds: 5000),
+      receiveTimeout: const Duration(milliseconds: 3000),
       contentType: Headers.jsonContentType,
       validateStatus: (_) => true,
     )
