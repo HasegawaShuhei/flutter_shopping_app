@@ -14,8 +14,8 @@ class UserRepository {
 
   final HttpClient _client;
 
-  Future<User> fetch() async {
-    final json = await _client.get(path: '/users/55');
+  Future<User> fetch({required int userId}) async {
+    final json = await _client.get(path: '/users/$userId');
     return User.fromJson(json);
   }
 
