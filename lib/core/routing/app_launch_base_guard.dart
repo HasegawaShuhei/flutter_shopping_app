@@ -30,7 +30,7 @@ abstract class AppLauchBaseGuard extends AutoRedirectGuard {
   @override
   Future<bool> canNavigate(RouteMatch<dynamic> route) async {
     /// 今回の場合は特に条件は不要なのでfalseを返しておく
-    return false;
+    return Future.value(false);
   }
 
   @override

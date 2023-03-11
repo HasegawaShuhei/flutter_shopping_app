@@ -46,7 +46,7 @@ class AsyncValueSliverWrapper<T> extends StatelessWidget {
   }
 }
 
-class SliverLoadingIndicator extends ConsumerWidget {
+class SliverLoadingIndicator extends HookConsumerWidget {
   const SliverLoadingIndicator({super.key});
 
   @override

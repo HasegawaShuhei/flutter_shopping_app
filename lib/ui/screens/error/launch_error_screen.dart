@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../../../core/providers/app_launch_status.dart';
+import '../../../features/user/providers/user_credentials.dart';
 
-class LaunchErrorScreen extends ConsumerWidget {
+class LaunchErrorScreen extends HookConsumerWidget {
   const LaunchErrorScreen({super.key});
 
   @override
@@ -16,7 +16,7 @@ class LaunchErrorScreen extends ConsumerWidget {
           children: [
             const Text('An error occured'),
             ElevatedButton(
-              onPressed: () => ref.invalidate(appLaunchStatusProvider),
+              onPressed: () => ref.invalidate(userCredentialsProvider),
               child: const Text('retry'),
             ),
           ],

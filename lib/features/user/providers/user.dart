@@ -19,5 +19,6 @@ final userProvider = FutureProvider<User?>(
       rethrow;
     }
   },
+  dependencies: [userCredentialsProvider],
   name: 'userProvider',
 );
