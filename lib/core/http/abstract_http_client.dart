@@ -1,9 +1,12 @@
+import 'package:dio/dio.dart';
+
 import '../utils/types.dart';
 
 abstract class AbstractHttpClient {
   Future<JsonMap> get({
     required String path,
     Map<String, dynamic>? queryParameters,
+    CancelToken? cancelToken,
   });
 
   Future<JsonMap> post({

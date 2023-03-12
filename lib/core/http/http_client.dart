@@ -21,11 +21,13 @@ class HttpClient implements AbstractHttpClient {
   Future<JsonMap> get({
     required String path,
     Map<String, dynamic>? queryParameters,
+    CancelToken? cancelToken,
   }) async {
     try {
       final response = await _dio.get<dynamic>(
         path,
         queryParameters: queryParameters,
+        cancelToken: cancelToken,
       );
       _validateResponse(response);
       return _toResponseJson(response.data);

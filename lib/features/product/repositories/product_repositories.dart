@@ -1,3 +1,4 @@
+import 'package:dio/dio.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../../../core/http/http_client.dart';
@@ -18,6 +19,7 @@ class ProductRepository {
   Future<PaginationResponse<Product>> fetchProducts({
     int limit = 10,
     int offset = 0,
+    required CancelToken cancelToken,
   }) async {
     final json = await _client.get(
       path: '/products',
@@ -25,6 +27,7 @@ class ProductRepository {
         'limit': limit,
         'skip': offset,
       },
+      cancelToken: cancelToken,
     );
     final productsJson = (json['products'] as List).cast<JsonMap>();
     return PaginationResponse<Product>.fromResponse(
